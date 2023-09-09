@@ -52,7 +52,7 @@ public class controlBiblioteca {
     public String busquedaDosCampos(int año, String genero){
         int indice=0; String cadena=" ";
         while ((indice<ind && año!=cBiblio[indice].getAñoPub() && !genero.equals(cBiblio[indice].getGenero()))) {            
-            System.out.println("No existe");
+            cadena="No existe";
             indice++;
         }
         
@@ -62,11 +62,6 @@ public class controlBiblioteca {
             ; }
            indice++;
         }
-         
-
-//
-
-
 
 //        String cadena=" ";
 //        for (int indice = 0; indice <= ind; indice++) {
@@ -77,5 +72,31 @@ public class controlBiblioteca {
 //
         return cadena;
     } 
-//    
+        
+    public String eliminarLibro(int isbn){
+        String cad = null;
+          int posicion = 0;
+        for (int i = 0; i <=ind; i++) {
+            if (isbn== cBiblio[i].getISBN()) {
+               posicion=i;
+            cad= "Se eliminó "+ cBiblio[posicion].getISBN()+" "+cBiblio[posicion].getTitulo();}
+        }
+         if (posicion>-1) {
+                cBiblio[posicion]=null;
+                JOptionPane.showMessageDialog(null, "Se elimino el alumno " + isbn);} 
+
+        return cad;
+    }
+  
+    //en proceso todavia :,O
+    public String busquedaOrdenada(String idioma){
+        int indice=0; //indMayor es el ultimoindice del arreglo, el lenght recorre todos pero siempre es
+        while (indice<ind && !idioma.equals(cBiblio[indice].getIdioma())) {
+            ind++;
+        }
+        if (idioma.equals(cBiblio[indice].getIdioma())) 
+            return cBiblio[indice].getIdioma();
+        else return "";
+    }
+    
 }
