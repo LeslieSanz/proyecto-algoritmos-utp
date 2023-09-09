@@ -50,22 +50,32 @@ public class controlBiblioteca {
     //buscar genero y año de publicacion (es en lista desordenada y el profe dijo que podiamos escoger los campos)
     // dos a la vez
     public String busquedaDosCampos(int año, String genero){
-        int indice=0; String cadena;
+        int indice=0; String cadena=" ";
         while ((indice<ind && año!=cBiblio[indice].getAñoPub() && !genero.equals(cBiblio[indice].getGenero()))) {            
+            System.out.println("No existe");
             indice++;
         }
-        if (año==cBiblio[indice].getAñoPub() && genero.equals(cBiblio[indice].getGenero())){ 
-            cadena= cBiblio[indice].getTitulo()+" "+cBiblio[indice].getTitulo()+" "+cBiblio[indice].getAutor()+"\n";
-            indice++; }
-//        else
-//        if (año!=cBiblio[indice].getAñoPub() || !genero.equals(cBiblio[indice].getGenero())) {
-//            cadena="";
-//                    
+        
+        while (indice<=ind) {
+           if (año==cBiblio[indice].getAñoPub() && genero.equals(cBiblio[indice].getGenero())){ 
+            cadena= cadena + cBiblio[indice].getTitulo()+" "+cBiblio[indice].getTitulo()+" "+cBiblio[indice].getAutor()+"\n";
+            ; }
+           indice++;
+        }
+         
+
+//
+
+
+
+//        String cadena=" ";
+//        for (int indice = 0; indice <= ind; indice++) {
+//            if (año==cBiblio[indice].getAñoPub() && genero.equals(cBiblio[indice].getGenero())){ 
+//            cadena= cadena + cBiblio[indice].getTitulo()+" "+cBiblio[indice].getTitulo()+" "+cBiblio[indice].getAutor()+"\n";
+//            ; }
 //        }
-        else    cadena= "";
-        
-        
+//
         return cadena;
     } 
-    
+//    
 }
