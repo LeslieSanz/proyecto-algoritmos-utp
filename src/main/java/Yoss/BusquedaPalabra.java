@@ -8,9 +8,9 @@ package Yoss;
  *
  * @author yosse
  */
-public class BusquedaDoble {
+public class BusquedaPalabra {
     private int arreglo[];
-    public BusquedaDoble(int n) {
+    public BusquedaPalabra(int n) {
         arreglo= new int[n];
     }
     
