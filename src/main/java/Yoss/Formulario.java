@@ -51,6 +51,7 @@ public class Formulario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton6 = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +116,13 @@ public class Formulario extends javax.swing.JFrame {
 
         jButton6.setText("Actualizar");
 
+        eliminar.setText("Eliminar");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -172,11 +180,13 @@ public class Formulario extends javax.swing.JFrame {
                         .addComponent(jButton5))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton6)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(eliminar)
+                                .addGap(29, 29, 29)
+                                .addComponent(jButton6))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,9 +243,11 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(jButton5))
                 .addGap(25, 25, 25)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jButton6)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(eliminar))
+                .addContainerGap())
         );
 
         pack();
@@ -285,6 +297,11 @@ public class Formulario extends javax.swing.JFrame {
     jTextArea1.append("\n"+encontrado);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+    int isbnF= Integer.parseInt(isbn.getText());
+    jTextArea1.append(controlB.eliminarLibro(isbnF));;
+    }//GEN-LAST:event_eliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -327,6 +344,7 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxIdioma;
     private javax.swing.JTextField crear;
     private javax.swing.JTextField editorial;
+    private javax.swing.JButton eliminar;
     private javax.swing.JTextField isbn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
