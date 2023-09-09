@@ -6,7 +6,7 @@ package Yoss;
 
 /**
  *
- * @author yosse
+ * @author yosselin
  */
 public class BusquedaPalabra {
     private int arreglo[];
