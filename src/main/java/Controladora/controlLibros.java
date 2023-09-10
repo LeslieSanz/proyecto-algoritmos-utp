@@ -104,4 +104,32 @@ public class controlLibros {
 //
         return cadena;
     } 
+    
+    
+    
+    //ALGORITMO DE BUSQUEDA
+    //muestre todos los valores que coincidan con una palabra especifica
+    public int[] busquedaNoOrdenada(String valor) { 
+        valor = valor.toLowerCase();
+        int indMayor = oLibros.length - 1;
+        int ind;
+        int[] indices = new int[oLibros.length];
+        int n = 0;
+        
+        for (ind = 0; ind <= indMayor; ind++) {
+         if (oLibros[ind].getTitulo().toLowerCase().contains(valor)){    
+            indices[n] = ind;
+                n++;
+             //System.out.println(ind);        
+         }
+        }
+        
+        //nuevo arreglo coon los indices validos
+        int[] indvalido = new int[n];
+        for (ind = 0; ind < n; ind++) {
+            indvalido[ind] = indices[ind];
+        }
+        return indvalido;
+       //return indices;
+    }  
 }
