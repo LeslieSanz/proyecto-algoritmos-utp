@@ -48,6 +48,7 @@ public class Form extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         btnOrdenarAutor = new javax.swing.JButton();
+        btnBuscarXpalabras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,6 +127,13 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        btnBuscarXpalabras.setText("Buscar por palabras");
+        btnBuscarXpalabras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarXpalabrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -185,11 +193,12 @@ public class Form extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addComponent(jButton6))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnOrdenarAutor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBuscar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBuscar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBuscar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBuscarXpalabras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
@@ -253,7 +262,9 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(btnMostrar)
                     .addComponent(btnBuscar2))
                 .addGap(25, 25, 25)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarXpalabras))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
@@ -317,6 +328,23 @@ public class Form extends javax.swing.JFrame {
     oControlLib.ordInsercionParaString();
     }//GEN-LAST:event_btnOrdenarAutorActionPerformed
 
+    private void btnBuscarXpalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarXpalabrasActionPerformed
+        String pbuscar = titulo.getText();
+        int[] indices = oControlLib.BNOxpalaEspecf(pbuscar);
+        
+        //verificando si se encontro titulos que coincide
+        if (indices.length > 0 && indices[0] != -1) { 
+            String resultado = "Resultados para '" + pbuscar + "':\n";
+            for (int indice : indices) {
+                cLibro libro = oControlLib.oLibros[indice];
+                resultado += libro.mostrar() + "\n";
+            }
+            jTextArea1.setText(resultado);
+        } 
+        else
+        jTextArea1.setText("No se encontraron resultados para '" + pbuscar + "'.");  
+    }//GEN-LAST:event_btnBuscarXpalabrasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -358,6 +386,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JTextField año;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscar2;
+    private javax.swing.JButton btnBuscarXpalabras;
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnInsertar;
     private javax.swing.JButton btnMostrar;

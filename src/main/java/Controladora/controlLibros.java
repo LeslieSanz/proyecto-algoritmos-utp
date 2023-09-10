@@ -3,7 +3,7 @@ import Clases.cLibro;
 import javax.swing.JOptionPane;
 
 public class controlLibros {
-    private cLibro oLibros[];
+    public cLibro oLibros[];
     private int ind;
 
     public controlLibros(int n) {
@@ -109,7 +109,7 @@ public class controlLibros {
     
     //ALGORITMO DE BUSQUEDA
     //muestre todos los valores que coincidan con una palabra especifica
-    public int[] busquedaNoOrdenada(String valor) { 
+    public int[] BNOxpalaEspecf(String valor) { 
         valor = valor.toLowerCase();
         int indMayor = oLibros.length - 1;
         int ind;
@@ -124,12 +124,15 @@ public class controlLibros {
          }
         }
         
-        //nuevo arreglo coon los indices validos
+        // Verificar si se encontraron coincidencias
+        if (n > 0){
+        // Crear un nuevo arreglo
         int[] indvalido = new int[n];
-        for (ind = 0; ind < n; ind++) {
+        for (ind = 0; ind < n; ind++)
             indvalido[ind] = indices[ind];
-        }
         return indvalido;
-       //return indices;
+        } 
+        else 
+        return new int[]{-1}; 
     }  
 }

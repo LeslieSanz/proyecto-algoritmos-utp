@@ -89,11 +89,12 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="btnOrdenarAutor" alignment="1" max="32767" attributes="0"/>
                   <Component id="btnBuscar1" alignment="1" max="32767" attributes="0"/>
                   <Component id="btnBuscar2" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnBuscarXpalabras" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
@@ -179,7 +180,10 @@
                   <Component id="btnBuscar2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
+                  <Component id="btnBuscarXpalabras" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="36" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -351,6 +355,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrdenarAutorActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnBuscarXpalabras">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar por palabras"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarXpalabrasActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
