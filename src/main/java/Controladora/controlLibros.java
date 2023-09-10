@@ -126,32 +126,56 @@ public class controlLibros {
     
     //ALGORITMO DE BUSQUEDA
     //muestre todos los valores que coincidan con una palabra especifica
-    public int[] BNOxpalaEspecf(String valor) { 
-        valor = valor.toLowerCase();
+    public String BNOxpalaEspecf(String pbuscar) { 
+        pbuscar = pbuscar.toLowerCase();
         int indMayor = oLibros.length - 1;
-        int ind;
         int[] indices = new int[oLibros.length];
         int n = 0;
+       
+        for (int ind = 0; ind <= indMayor; ind++) {
+        String tituloLibro = oLibros[ind].getTitulo().toLowerCase();
+        String[] letrasT= tituloLibro.split(""); //dividir el titulo en letras
+        String[] letrasB= pbuscar.split(""); //dividir pbuscar en letras
         
-        for (ind = 0; ind <= indMayor; ind++) {
-         if (oLibros[ind].getTitulo().toLowerCase().contains(valor)){    
-            indices[n] = ind;
-                n++;
-             //System.out.println(ind);        
-         }
+        int iMayor = letrasT.length;
+        int jMayor = letrasB.length;
+        int i = 0, j = 0, Coincide = -1; // Inicializamos la variable de inicio de coincidencia
+        
+        while (i <iMayor && j<jMayor) {
+            if (letrasT[i].equals(letrasB[j])) {
+                if (Coincide == -1) {
+                    Coincide = i; // Establecer el inicio de la coincidencia
+                }
+                i++;
+                j++;
+                System.err.println(Coincide);
+            } else {
+                //Si las letras no coinciden, reiniciamos la búsqueda
+                Coincide = -1;
+                i = i - j + 1;//Retroceder i al siguiente índice
+                j = 0;//Reiniciar la búsqueda de pbuscar
+            }
         }
-        
+        if (j == jMayor) {
+            // Hemos encontrado una coincidencia completa
+            indices[n] = ind;
+            n++;
+            // System.err.println(n);
+        }
+    }
+   
         // Verificar si se encontraron coincidencias
-        if (n > 0){
-        // Crear un nuevo arreglo
-        int[] indvalido = new int[n];
-        for (ind = 0; ind < n; ind++)
-            indvalido[ind] = indices[ind];
-        return indvalido;
-        } 
-        else 
-        return new int[]{-1}; 
-    }  
+        if (n > 0) {
+            String resultado = "Busqueda de TITULOS que contenga la palabra '" +pbuscar + "':\n";
+            for (int i = 0; i < n; i++) {
+                int indice = indices[i];
+                cLibro libro = oLibros[indice];
+                resultado = resultado+libro.mostrar() + "\n";
+            }
+            return resultado;
+        } else 
+        return "No existe Titulos que contengan la palabra '" +pbuscar+ "'.";
+    }
     
     public String busquedaOrdenada(String idioma){
         int indice=0; //indMayor es el ultimoindice del arreglo, el lenght recorre todos pero siempre es

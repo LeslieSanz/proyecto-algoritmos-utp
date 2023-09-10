@@ -358,19 +358,8 @@ public class Form extends javax.swing.JFrame {
 
     private void btnBuscarXpalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarXpalabrasActionPerformed
         String pbuscar = titulo.getText();
-        int[] indices = oControlLib.BNOxpalaEspecf(pbuscar);
-        
-        //verificando si se encontro titulos que coincide
-        if (indices.length > 0 && indices[0] != -1) { 
-            String resultado = "Resultados para '" + pbuscar + "':\n";
-            for (int indice : indices) {
-                cLibro libro = oControlLib.oLibros[indice];
-                resultado += libro.mostrar() + "\n";
-            }
-            jTextArea1.setText(resultado);
-        } 
-        else
-        jTextArea1.setText("No se encontraron resultados para '" + pbuscar + "'.");  
+        String resultadoBusqueda = oControlLib.BNOxpalaEspecf(pbuscar);
+        jTextArea1.setText(resultadoBusqueda);
     }//GEN-LAST:event_btnBuscarXpalabrasActionPerformed
 
     private void BtnMostrarPorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarPorActionPerformed
