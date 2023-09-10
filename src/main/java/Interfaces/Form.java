@@ -49,6 +49,8 @@ public class Form extends javax.swing.JFrame {
         eliminar = new javax.swing.JButton();
         btnOrdenarAutor = new javax.swing.JButton();
         btnBuscarXpalabras = new javax.swing.JButton();
+        BtnMostrarPor = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,6 +136,20 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        BtnMostrarPor.setText("Mostar por");
+        BtnMostrarPor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarPorActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Buscar 3");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,7 +160,9 @@ public class Form extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(btnInsertar)
                         .addGap(37, 37, 37)
-                        .addComponent(btnMostrar))
+                        .addComponent(btnMostrar)
+                        .addGap(46, 46, 46)
+                        .addComponent(BtnMostrarPor))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jLabel1)
@@ -198,7 +216,8 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(btnOrdenarAutor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBuscar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBuscar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBuscarXpalabras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBuscarXpalabras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
@@ -259,12 +278,19 @@ public class Form extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnInsertar)
-                    .addComponent(btnMostrar)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnMostrar)
+                        .addComponent(BtnMostrarPor))
                     .addComponent(btnBuscar2))
-                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarXpalabras))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBuscarXpalabras)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
@@ -345,6 +371,19 @@ public class Form extends javax.swing.JFrame {
         jTextArea1.setText("No se encontraron resultados para '" + pbuscar + "'.");  
     }//GEN-LAST:event_btnBuscarXpalabrasActionPerformed
 
+    private void BtnMostrarPorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarPorActionPerformed
+
+        oControlLib.ordenarPorAtributoNumerico();
+        String cadena = oControlLib.muestraLibro();
+        jTextArea1.setText(cadena);
+    }//GEN-LAST:event_BtnMostrarPorActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String idio=cbxIdioma.getSelectedItem().toString();
+        String encontrado = oControlLib.busquedaOrdenada(idio);
+        jTextArea1.append("\n"+encontrado);    // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -382,6 +421,7 @@ public class Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnMostrarPor;
     private javax.swing.JTextField autor;
     private javax.swing.JTextField año;
     private javax.swing.JButton btnBuscar1;
@@ -396,6 +436,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JTextField editorial;
     private javax.swing.JButton eliminar;
     private javax.swing.JTextField isbn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

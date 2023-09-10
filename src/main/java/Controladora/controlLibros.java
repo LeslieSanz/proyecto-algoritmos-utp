@@ -45,6 +45,23 @@ public class controlLibros {
     //ALGORITMOS DE ORDENAMIENTO
     
     //Ordenar por un atributo numerico (Luis Miguel)
+    public void ordenarPorAtributoNumerico() {
+    int n = oLibros.length;
+    boolean ordenado = false;
+
+    do {
+        ordenado = true;
+        for (int i = 0; i < n - 1; i++) {
+            if (oLibros[i].getAñoPub() > oLibros[i + 1].getAñoPub()) {
+                cLibro temp = oLibros[i];
+                oLibros[i] = oLibros[i + 1];
+                oLibros[i + 1] = temp;
+                ordenado = false;
+            }
+        }
+        n--;
+    } while (!ordenado);
+}
     
     //Ordenar por un atributo String (Leslie)
     public void ordInsercionParaString(){
@@ -135,4 +152,28 @@ public class controlLibros {
         else 
         return new int[]{-1}; 
     }  
+    
+    public String busquedaOrdenada(String idioma){
+        int indice=0; //indMayor es el ultimoindice del arreglo, el lenght recorre todos pero siempre es
+        String cadena=" ";
+        while (indice<ind && !idioma.equals(oLibros[indice].getIdioma())) {
+            cadena="No existe";
+            ind++;
+        }
+
+        while (indice<=ind) {
+           if (idioma.equals(oLibros[indice].getIdioma())){ 
+            cadena= cadena + oLibros[indice].getTitulo()+" "+oLibros[indice].getTitulo()+" "+oLibros[indice].getAutor()+"\n";
+            ; }
+           indice++;
+        }
+        
+//        if (idioma.equals(cBiblio[indice].getIdioma())) 
+//            return cBiblio[indice].getIdioma();
+//        else return "";
+
+        return cadena;
+    }
+    
+    
 }

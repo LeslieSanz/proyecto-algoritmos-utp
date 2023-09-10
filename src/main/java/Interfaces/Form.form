@@ -30,6 +30,8 @@
                       <Component id="btnInsertar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
                       <Component id="btnMostrar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="BtnMostrarPor" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
@@ -95,6 +97,7 @@
                   <Component id="btnBuscar1" alignment="1" max="32767" attributes="0"/>
                   <Component id="btnBuscar2" alignment="1" max="32767" attributes="0"/>
                   <Component id="btnBuscarXpalabras" max="32767" attributes="0"/>
+                  <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
@@ -176,13 +179,23 @@
               <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnInsertar" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnMostrar" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnMostrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnMostrarPor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="btnBuscar2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
-                  <Component id="btnBuscarXpalabras" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnBuscarXpalabras" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="36" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -363,6 +376,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarXpalabrasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnMostrarPor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mostar por"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnMostrarPorActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar 3"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
