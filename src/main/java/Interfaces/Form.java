@@ -352,6 +352,8 @@ public class Form extends javax.swing.JFrame {
 
     private void btnOrdenarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarAutorActionPerformed
     oControlLib.ordInsercionParaString();
+    String cadena=oControlLib.muestraLibro();
+    jTextArea1.setText(cadena);
     }//GEN-LAST:event_btnOrdenarAutorActionPerformed
 
     private void btnBuscarXpalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarXpalabrasActionPerformed
@@ -376,6 +378,7 @@ public class Form extends javax.swing.JFrame {
         oControlLib.ordenarPorAtributoNumerico();
         String cadena = oControlLib.muestraLibro();
         jTextArea1.setText(cadena);
+        
     }//GEN-LAST:event_BtnMostrarPorActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
