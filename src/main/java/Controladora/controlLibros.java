@@ -1,6 +1,7 @@
 package Controladora;
 import Clases.cLibro;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class controlLibros {
     public cLibro oLibros[];
@@ -8,7 +9,30 @@ public class controlLibros {
 
     public controlLibros(int n) {
         oLibros= new cLibro[n];
-        ind=-1;
+        ind=n-1;
+    }
+    
+    public void cargarDatos(){
+        oLibros[0] = new cLibro("Cien años de soledad", 74728, "Gabriel García Márquez", "Vintage Español", "Realismo mágico", 1967, "Español");
+        oLibros[1] = new cLibro("El Gran Gatsby", 73565, "F. Scott Fitzgerald", "Scribner", "Novela contemporánea", 1925, "Inglés");
+        oLibros[2] = new cLibro("1984", 24935, "George Orwell", "Signet Classic", "Distopía", 1949, "Inglés");
+        oLibros[3] = new cLibro("El código Da Vinci", 74278, "Dan Brown", "Vintage Español", "Thriller de conspiración", 2003, "Español");
+        oLibros[4] = new cLibro("Harry Potter y la piedra filosofal", 83621, "J.K. Rowling", "Salamandra", "Fantasía", 1997, "Español");
+        oLibros[5] = new cLibro("Matar un ruiseñor", 20084, "Harper Lee", "Harper Perennial Modern Classics", "Novela clásica", 1960, "Inglés");
+        oLibros[6] = new cLibro("El Hobbit", 28227, "J.R.R. Tolkien", "Houghton Mifflin Harcourt", "Fantasía épica", 1937, "Inglés");
+        oLibros[7] = new cLibro("Orgullo y prejuicio", 90561, "Jane Austen", "CreateSpace Independent Publishing Platform", "Novela romántica", 1813, "Inglés");
+        oLibros[8] = new cLibro("La sombra del viento", 88674, "Carlos Ruiz Zafón", "Penguin Books", "Novela histórica", 2001, "Español");
+        oLibros[9] = new cLibro("Los juegos del hambre", 84369, "Suzanne Collins", "Molino", "Ciencia ficción distópica", 2008, "Español");
+        oLibros[10] = new cLibro("El alquimista", 15007, "Paulo Coelho", "HarperOne", "Ficción espiritual", 1988, "Inglés");
+        oLibros[11] = new cLibro("Rayuela", 15229, "Julio Cortázar", "Cátedra", "Novela experimental", 1963, "Español");
+        oLibros[12] = new cLibro("Los hombres me explican cosas", 40219, "Rebecca Solnit", "Haymarket Books", "Ensayo feminista", 2014, "Inglés");
+        oLibros[13] = new cLibro("El señor de los anillos: La comunidad del anillo", 66, "J.R.R. Tolkien", "Minotauro", "Fantasía épica", 1954, "Español");
+        oLibros[14] = new cLibro("Crimen y castigo", 80599, "Fyodor Dostoevsky", "Oxford University Press", "Novela psicológica", 1866, "Inglés");
+        oLibros[15] = new cLibro("El principito", 13925, "Antoine de Saint-Exupéry", "Harvest Books", "Literatura infantil", 1943, "Inglés");
+        oLibros[16] = new cLibro("Los pilares de la Tierra", 25245, "Ken Follett", "Signet", "Novela histórica", 1989, "Inglés");
+        oLibros[17] = new cLibro("La naranja mecánica", 12836, "Anthony Burgess", "W. W. Norton & Company", "Distopía", 1962, "Inglés");
+        oLibros[18] = new cLibro("La ladrona de libros", 75732, "Markus Zusak", "Vintage Books", "Drama histórico", 2005, "Inglés");
+        oLibros[19] = new cLibro("Los tres mosqueteros", 42341, "Alexandre Dumas", "Penguin Classics", "Aventura histórica", 1844, "Inglés");
     }
     
     public void insertarLibro(cLibro libro){
@@ -40,6 +64,21 @@ public class controlLibros {
             cadena+=oLibros[i].mostrar()+"\n"; //obteniendo cada uno de los objetios
         }
         return cadena;
+    }
+    
+    public void mostrarTabla(DefaultTableModel modelo){       
+        for(int i=0;  i <=ind; i++){
+            Object[] data = {
+                oLibros[i].getISBN(), 
+                oLibros[i].getTitulo(), 
+                oLibros[i].getAutor(), 
+                oLibros[i].getGenero(), 
+                oLibros[i].getEditorial(), 
+                oLibros[i].getIdioma(), 
+                oLibros[i].getAñoPub(), 
+                };
+            modelo.addRow(data);
+        }
     }
     
     //ALGORITMOS DE ORDENAMIENTO
