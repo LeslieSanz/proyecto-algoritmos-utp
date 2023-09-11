@@ -66,10 +66,13 @@ public class controlLibros {
     //Ordenar por un atributo String (Leslie)
     public void ordInsercionParaString(){
     int indMax = oLibros.length-1; cLibro valor;
-    //Empezar por indice 1, porque el primer elemento se asume ordenado. No hay uno anterior para comparar
+    /*El indice "i" indica la posicion del elemento que se va a insertar 
+    Empezar por indice 1(segundo elemento), porque el primer elemento se asume ordenado. 
+    No hay uno anterior para comparar*/
     for(int i=1;i<=indMax;i++){
-        //Recorrer el subarreglo ordenado y comparar con elemento a insertar
-        //j es para explorar el subarreglo que va desde a[n-1] hasta a[0], de atras hacia adelante
+        /*En este ciclo se recorre el subarreglo ordenado 
+        y se compara el elemento a insertar con cada uno de ellos
+        j es para explorar el subarreglo (de atras hacia adelante)*/
         int j=i;
         while(j>0 && (oLibros[j].getAutor().compareTo(oLibros[j-1].getAutor())<0)){ //Si el que le sigue es menor que el anterior
             //Guardar el menor
