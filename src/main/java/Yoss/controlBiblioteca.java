@@ -82,9 +82,18 @@ public class controlBiblioteca {
             cad= "Se eliminó "+ cBiblio[posicion].getISBN()+" "+cBiblio[posicion].getTitulo();}
         }
          if (posicion>-1) {
-                cBiblio[posicion]=null;
-                JOptionPane.showMessageDialog(null, "Se elimino el alumno " + isbn);} 
-
+//                cBiblio[posicion]=null;
+//                JOptionPane.showMessageDialog(null, "Se elimino el alumno " + isbn);} 
+         
+        cBiblioteca[] temporal = new cBiblioteca[cBiblio.length - 1];
+        int pos=0;
+             for (int i = 0; i < ind; i++) {
+                 if (i !=posicion) {
+                     temporal[pos]=cBiblio[i];
+                     pos++;
+                 }
+             }
+         }
         return cad;
     }
   
@@ -99,4 +108,37 @@ public class controlBiblioteca {
         else return "";
     }
     
+    public String eliminarParteDos(int isbn) {
+    String cad = null, cad2 = null;
+    int posicion = -1; // Inicializa la posición con un valor que indique que no se encontró el ISBN.
+
+
+    for (int i = 0; i <= ind; i++) {
+        if (isbn == cBiblio[i].getISBN()) {
+            posicion = i;
+            cad = "Se eliminó " + cBiblio[posicion].getISBN() + " " + cBiblio[posicion].getTitulo();
+            break; // Sale del bucle una vez que se encuentra el libro.
+        }
+    }
+
+    if (posicion > -1) {
+        // Elimina el elemento en la posición 'posicion' y desplaza los elementos restantes hacia la izquierda.
+        for (int i = posicion; i < ind; i++) {
+            cBiblio[i] = cBiblio[i + 1];
+        }
+        cBiblio[ind] = null; // Coloca 'null' en la última posición para eliminar la referencia al último elemento.
+        ind--; // Reduce el valor de 'ind' para reflejar la eliminación.
+
+        // Ahora, el libro se ha eliminado del arreglo original 'cBiblio'.
+    
+    System.out.println("Arreglo actualizado:");
+        for (int i = 0; i <= ind; i++) {
+            cad2= cBiblio[i].getISBN() + " " + cBiblio[i].getTitulo()+ " " + cBiblio[i].getAutor()+ " " + cBiblio[i].getEditorial();
+        }
+    }
+    
+    return cad+"\n"+cad2;
+}
+
+
 }
