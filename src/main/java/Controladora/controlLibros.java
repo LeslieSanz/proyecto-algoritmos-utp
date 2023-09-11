@@ -9,7 +9,7 @@ public class controlLibros {
 
     public controlLibros(int n) {
         oLibros= new cLibro[n];
-        ind=n-1;
+        ind=19;
     }
     
     public void cargarDatos(){
