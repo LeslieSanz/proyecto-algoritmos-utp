@@ -299,7 +299,7 @@ public class Formulario extends javax.swing.JFrame {
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
     int isbnF= Integer.parseInt(isbn.getText());
-    jTextArea1.append(controlB.eliminarLibro(isbnF));;
+    jTextArea1.append(controlB.eliminarParteDos(isbnF));;
     }//GEN-LAST:event_eliminarActionPerformed
 
     /**
