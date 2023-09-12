@@ -165,10 +165,39 @@ public class controlLibros {
         }
     }
     
+    // Método para ordenar por dos atributos (Esther)
+    public void ordenarPorDosAtributos() {
+        // Ordenar por Idioma en forma ascendente (Método de Burbuja)
+    for (int i = 0; i < oLibros.length - 1; i++) {
+        for (int j = 0; j < oLibros.length - 1 - i; j++) {
+            if (oLibros[j].getIdioma().compareTo(oLibros[j + 1].getIdioma()) > 0) {
+                // Intercambiar los libros
+                cLibro temp = oLibros[j];
+                oLibros[j] = oLibros[j + 1];
+                oLibros[j + 1] = temp;
+            }
+        }
+    }
+
+    // Ordenar por Editorial en forma descendente (Método de Selección)
+    for (int i = 0; i < oLibros.length - 1; i++) {
+        int indiceMax = i;
+        for (int j = i + 1; j < oLibros.length; j++) {
+            if (oLibros[j].getEditorial().compareTo(oLibros[indiceMax].getEditorial()) > 0) {
+                indiceMax = j;
+            }
+        }
+        // Intercambiar los libros
+        cLibro temp = oLibros[i];
+        oLibros[i] = oLibros[indiceMax];
+        oLibros[indiceMax] = temp;
+       }
+    }
+    
     
     /*---------------------------------------------------------------------------------------------------------
     ALGORITMOS DE BUSQUEDA
-    Buscar por un valor numerico (EN ESTE CASO ES VALOR DESORDENADOS)*/
+    Buscar por un valor numerico (EN ESTE CASO ES VALOR DESORDENADOS) (Yosselin)*/ 
     public String busquedaNoOrdenadaISBN(int isbn){
         int indice=0;  //indMayor es el ultimoindice del arreglo, el lenght recorre todos pero siempre es
         while (indice<ind && isbn!=oLibros[indice].getISBN()) {
@@ -180,7 +209,7 @@ public class controlLibros {
     }
     
     //Buscar genero y año de publicacion (es en lista desordenada y el profe dijo que podiamos escoger los campos)
-    // dos a la vez
+    // dos a la vez (Yosselin)
     public String busquedaDosCampos(int año, String genero){
         int indice=0; String cadena=" ";
         while ((indice<ind && año!=oLibros[indice].getAñoPub() && !genero.equals(oLibros[indice].getGenero()))) {            
@@ -205,10 +234,7 @@ public class controlLibros {
         return cadena;
     } 
     
-    
-    
-    //ALGORITMO DE BUSQUEDA
-    //muestre todos los valores que coincidan con una palabra especifica
+    //Muestre todos los valores que coincidan con una palabra especifica (Esther)
     public String BNOxpalaEspecf(String pbuscar) { 
         pbuscar = pbuscar.toLowerCase();
         int indMayor = oLibros.length - 1;
@@ -260,57 +286,17 @@ public class controlLibros {
         return "No existe Titulos que contengan la palabra '" +pbuscar+ "'.";
     }
     
-    public String busquedaOrdenadaIdioma(String idioma){
-        int indice=0; //indMayor es el ultimoindice del arreglo, el lenght recorre todos pero siempre es
-        String cadena=" ";
+    public String busquedaOrdenada(String idioma){
+        int indice=0; String cadena = "";//indMayor es el ultimoindice del arreglo, el lenght recorre todos pero siempre es
         while (indice<ind && !idioma.equals(oLibros[indice].getIdioma())) {
-            cadena="No existe";
-            ind++;
+            indice++;
         }
-
         while (indice<=ind) {
            if (idioma.equals(oLibros[indice].getIdioma())){ 
             cadena= cadena + oLibros[indice].getTitulo()+" "+oLibros[indice].getTitulo()+" "+oLibros[indice].getAutor()+"\n";
             ; }
            indice++;
         }
-        
-//        if (idioma.equals(cBiblio[indice].getIdioma())) 
-//            return cBiblio[indice].getIdioma();
-//        else return "";
-
         return cadena;
-    }
-    
-
-    // Método para ordenar por dos atributos
-    public void ordenarPorDosAtributos() {
-        // Ordenar por Idioma en forma ascendente (Método de Burbuja)
-    for (int i = 0; i < oLibros.length - 1; i++) {
-        for (int j = 0; j < oLibros.length - 1 - i; j++) {
-            if (oLibros[j].getIdioma().compareTo(oLibros[j + 1].getIdioma()) > 0) {
-                // Intercambiar los libros
-                cLibro temp = oLibros[j];
-                oLibros[j] = oLibros[j + 1];
-                oLibros[j + 1] = temp;
-            }
-        }
-    }
-
-    // Ordenar por Editorial en forma descendente (Método de Selección)
-    for (int i = 0; i < oLibros.length - 1; i++) {
-        int indiceMax = i;
-        for (int j = i + 1; j < oLibros.length; j++) {
-            if (oLibros[j].getEditorial().compareTo(oLibros[indiceMax].getEditorial()) > 0) {
-                indiceMax = j;
-            }
-        }
-        // Intercambiar los libros
-        cLibro temp = oLibros[i];
-        oLibros[i] = oLibros[indiceMax];
-        oLibros[indiceMax] = temp;
-    }
-    }
-    
-    
+    }    
 }
