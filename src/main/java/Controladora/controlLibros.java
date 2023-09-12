@@ -109,12 +109,15 @@ public class controlLibros {
     
     //Ordenar por un atributo numerico (Luis Miguel)
     public void ordenarPorAtributoNumerico() {
-    int indMax = ind-1;
+    int izq = 0;
+    int der = ind - 1;
     boolean ordenado = false;
 
     do {
         ordenado = true;
-        for (int i = 0; i <=indMax; i++) {
+
+        // Mover de izquierda a derecha
+        for (int i = izq; i <= der; i++) {
             if (oLibros[i].getAñoPub() > oLibros[i + 1].getAñoPub()) {
                 cLibro temp = oLibros[i];
                 oLibros[i] = oLibros[i + 1];
@@ -122,6 +125,21 @@ public class controlLibros {
                 ordenado = false;
             }
         }
+        der--; // Reducir el rango de búsqueda a la izquierda
+
+        // Si no se realizó ningún intercambio, el arreglo ya está ordenado
+        if (ordenado) break;
+
+        // Mover de derecha a izquierda
+        for (int i = der; i > izq; i--) {
+            if (oLibros[i].getAñoPub() < oLibros[i - 1].getAñoPub()) {
+                cLibro temp = oLibros[i];
+                oLibros[i] = oLibros[i - 1];
+                oLibros[i - 1] = temp;
+                ordenado = false;
+            }
+        }
+        izq++; // Aumentar el rango de búsqueda a la derecha
     } while (!ordenado);
 }
     
