@@ -81,16 +81,23 @@ public class controlLibros {
         }
     }
     
+    public void limpiarTabla(DefaultTableModel modelo) {
+        int indMaxFilas = modelo.getRowCount()-1;
+        for (int i = indMaxFilas; i >= 0; i--) {
+            modelo.removeRow(i);
+        }
+    }
+    
     //ALGORITMOS DE ORDENAMIENTO
     
     //Ordenar por un atributo numerico (Luis Miguel)
     public void ordenarPorAtributoNumerico() {
-    int n = oLibros.length;
+    int indMax = ind-1;
     boolean ordenado = false;
 
     do {
         ordenado = true;
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i <=indMax; i++) {
             if (oLibros[i].getAñoPub() > oLibros[i + 1].getAñoPub()) {
                 cLibro temp = oLibros[i];
                 oLibros[i] = oLibros[i + 1];
@@ -98,13 +105,12 @@ public class controlLibros {
                 ordenado = false;
             }
         }
-        n--;
     } while (!ordenado);
 }
     
     //Ordenar por un atributo String (Leslie)
     public void ordInsercionParaString(){
-    int indMax = oLibros.length-1; cLibro valor;
+    int indMax = ind-1; cLibro valor;
     /*El indice "i" indica la posicion del elemento que se va a insertar 
     Empezar por indice 1(segundo elemento), porque el primer elemento se asume ordenado. 
     No hay uno anterior para comparar*/
@@ -128,7 +134,7 @@ public class controlLibros {
     /*---------------------------------------------------------------------------------------------------------
     ALGORITMOS DE BUSQUEDA
     Buscar por un valor numerico (EN ESTE CASO ES VALOR DESORDENADOS)*/
-    public String busquedaNoOrdenada(int isbn){
+    public String busquedaNoOrdenadaISBN(int isbn){
         int indice=0;  //indMayor es el ultimoindice del arreglo, el lenght recorre todos pero siempre es
         while (indice<ind && isbn!=oLibros[indice].getISBN()) {
             indice++;
@@ -219,7 +225,7 @@ public class controlLibros {
         return "No existe Titulos que contengan la palabra '" +pbuscar+ "'.";
     }
     
-    public String busquedaOrdenada(String idioma){
+    public String busquedaOrdenadaIdioma(String idioma){
         int indice=0; //indMayor es el ultimoindice del arreglo, el lenght recorre todos pero siempre es
         String cadena=" ";
         while (indice<ind && !idioma.equals(oLibros[indice].getIdioma())) {
