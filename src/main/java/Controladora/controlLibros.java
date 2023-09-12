@@ -44,19 +44,36 @@ public class controlLibros {
     }
     
     public String eliminarLibro(int isbn){
-        String cad = null;
-          int posicion = 0;
-        for (int i = 0; i <=ind; i++) {
-            if (isbn== oLibros[i].getISBN()) {
-               posicion=i;
-            cad= "Se eliminó "+ oLibros[posicion].getISBN()+" "+oLibros[posicion].getTitulo();}
-        }
-         if (posicion>-1) {
-                oLibros[posicion]=null;
-                JOptionPane.showMessageDialog(null, "Se elimino el alumno " + isbn);} 
+        String cad = null, cad2 = null;
+    int posicion = -1; // Inicializa la posición con un valor que indique que no se encontró el ISBN.
 
-        return cad;
+    for (int i = 0; i <= ind; i++) {
+        if (isbn == oLibros[i].getISBN()) {
+            posicion = i;
+            cad = "Se eliminó " + oLibros[posicion].getISBN() + " " + oLibros[posicion].getTitulo();
+            break; // Sale del bucle una vez que se encuentra el libro.
+        }
     }
+
+    if (posicion > -1) {
+        // Elimina el elemento en la posición 'posicion' y desplaza los elementos restantes hacia la izquierda.
+        for (int i = posicion; i < ind; i++) {
+            oLibros[i] = oLibros[i + 1];
+        }
+        oLibros[ind] = null; // Coloca 'null' en la última posición para eliminar la referencia al último elemento.
+        ind--; // Reduce el valor de 'ind' para reflejar la eliminación.
+
+        // Ahora, el libro se ha eliminado del arreglo original 'cBiblio'.
+    
+    System.out.println("Arreglo actualizado:");
+        for (int i = 0; i <= ind; i++) {
+            cad2= oLibros[i].getISBN() + " " + oLibros[i].getTitulo()+ " " + oLibros[i].getAutor()+ " " + oLibros[i].getEditorial();
+        }
+    }
+    
+    return cad+"\n"+cad2;
+    }
+    
     
     public String muestraLibro(){
         String cadena="";
