@@ -237,30 +237,26 @@ public class controlLibros {
     //Muestre todos los valores que coincidan con una palabra especifica (Esther)
     public String BNOxpalaEspecf(String pbuscar) { 
         pbuscar = pbuscar.toLowerCase();
-        int indMayor = oLibros.length - 1;
+        int indMayor = ind;
         int[] indices = new int[oLibros.length];
         int n = 0;
        
         for (int ind = 0; ind <= indMayor; ind++) {
         String tituloLibro = oLibros[ind].getTitulo().toLowerCase();
+            System.err.println(tituloLibro);
         String[] letrasT= tituloLibro.split(""); //dividir el titulo en letras
         String[] letrasB= pbuscar.split(""); //dividir pbuscar en letras
         
         int iMayor = letrasT.length;
         int jMayor = letrasB.length;
-        int i = 0, j = 0, Coincide = -1; // Inicializamos la variable de inicio de coincidencia
+        int i = 0, j = 0; // Inicializamos la variable de inicio de coincidencia
         
         while (i <iMayor && j<jMayor) {
             if (letrasT[i].equals(letrasB[j])) {
-                if (Coincide == -1) {
-                    Coincide = i; // Establecer el inicio de la coincidencia
-                }
                 i++;
                 j++;
-                System.err.println(Coincide);
             } else {
                 //Si las letras no coinciden, reiniciamos la búsqueda
-                Coincide = -1;
                 i = i - j + 1;//Retroceder i al siguiente índice
                 j = 0;//Reiniciar la búsqueda de pbuscar
             }
