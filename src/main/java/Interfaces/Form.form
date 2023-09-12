@@ -93,6 +93,8 @@
                                   <Component id="eliminar" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnMostrarTabla" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -225,6 +227,7 @@
                               <Component id="btnInsertar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnMostrarTabla" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jScrollPane2" min="-2" pref="280" max="-2" attributes="0"/>
@@ -490,6 +493,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Resultados de la b&#xfa;squeda"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Limpiar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

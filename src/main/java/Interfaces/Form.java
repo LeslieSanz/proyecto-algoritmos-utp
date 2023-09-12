@@ -66,6 +66,7 @@ public class Form extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -208,6 +209,13 @@ public class Form extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel10.setText("Resultados de la búsqueda");
 
+        jButton3.setText("Limpiar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -250,7 +258,9 @@ public class Form extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(eliminar)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnMostrarTabla)))
+                                .addComponent(btnMostrarTabla)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -349,7 +359,8 @@ public class Form extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnInsertar)
                             .addComponent(eliminar)
-                            .addComponent(btnMostrarTabla)))
+                            .addComponent(btnMostrarTabla)
+                            .addComponent(jButton3)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jLabel10)
@@ -460,6 +471,7 @@ public class Form extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnMostrarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTablaActionPerformed
+    oControlLib.limpiarTabla(modelo);
     oControlLib.mostrarTabla(modelo);
     }//GEN-LAST:event_btnMostrarTablaActionPerformed
 
@@ -473,7 +485,7 @@ public class Form extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxGeneroActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     oControlLib.ordenarPorDosAtributos();
+    oControlLib.ordenarPorDosAtributos();
     oControlLib.limpiarTabla(modelo);
     oControlLib.mostrarTabla(modelo);// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -481,6 +493,10 @@ public class Form extends javax.swing.JFrame {
     private void cbxIdiomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxIdiomaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxIdiomaActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        oControlLib.limpiarTabla(modelo);
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     
     /**
@@ -538,6 +554,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JTextField isbn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
