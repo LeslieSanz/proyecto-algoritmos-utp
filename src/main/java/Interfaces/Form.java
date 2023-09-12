@@ -54,7 +54,6 @@ public class Form extends javax.swing.JFrame {
         btnBuscar2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton6 = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         btnOrdenarAutor = new javax.swing.JButton();
         btnBuscarXpalabras = new javax.swing.JButton();
@@ -65,6 +64,7 @@ public class Form extends javax.swing.JFrame {
         btnMostrarTabla = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnCargar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,8 +131,6 @@ public class Form extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
-
-        jButton6.setText("Actualizar");
 
         eliminar.setText("Eliminar");
         eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -203,6 +201,13 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Ordenar editorial e idioma");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -262,10 +267,7 @@ public class Form extends javax.swing.JFrame {
                                 .addComponent(btnLimpiar)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnCargar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(eliminar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton6)))
+                            .addComponent(eliminar))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane2)
@@ -276,7 +278,8 @@ public class Form extends javax.swing.JFrame {
                             .addComponent(btnBuscar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnBuscarXpalabras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(BtnMostrarPor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(150, 150, 150))))
         );
         layout.setVerticalGroup(
@@ -342,9 +345,7 @@ public class Form extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(eliminar)
-                            .addComponent(jButton6))
+                        .addComponent(eliminar)
                         .addGap(40, 40, 40))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BtnMostrarPor)
@@ -358,7 +359,9 @@ public class Form extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addGap(19, 19, 19)
                         .addComponent(btnBuscarXpalabras)
-                        .addContainerGap(218, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addContainerGap(175, Short.MAX_VALUE))))
         );
 
         pack();
@@ -460,6 +463,12 @@ public class Form extends javax.swing.JFrame {
     private void cbxGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGeneroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxGeneroActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+     oControlLib.ordenarPorDosAtributos();
+    oControlLib.limpiarTabla(modelo);
+    oControlLib.mostrarTabla(modelo);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
     
     
     /**
@@ -518,7 +527,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton eliminar;
     private javax.swing.JTextField isbn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

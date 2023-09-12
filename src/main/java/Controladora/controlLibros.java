@@ -282,5 +282,35 @@ public class controlLibros {
         return cadena;
     }
     
+
+    // Método para ordenar por dos atributos
+    public void ordenarPorDosAtributos() {
+        // Ordenar por Idioma en forma ascendente (Método de Burbuja)
+    for (int i = 0; i < oLibros.length - 1; i++) {
+        for (int j = 0; j < oLibros.length - 1 - i; j++) {
+            if (oLibros[j].getIdioma().compareTo(oLibros[j + 1].getIdioma()) > 0) {
+                // Intercambiar los libros
+                cLibro temp = oLibros[j];
+                oLibros[j] = oLibros[j + 1];
+                oLibros[j + 1] = temp;
+            }
+        }
+    }
+
+    // Ordenar por Editorial en forma descendente (Método de Selección)
+    for (int i = 0; i < oLibros.length - 1; i++) {
+        int indiceMax = i;
+        for (int j = i + 1; j < oLibros.length; j++) {
+            if (oLibros[j].getEditorial().compareTo(oLibros[indiceMax].getEditorial()) > 0) {
+                indiceMax = j;
+            }
+        }
+        // Intercambiar los libros
+        cLibro temp = oLibros[i];
+        oLibros[i] = oLibros[indiceMax];
+        oLibros[indiceMax] = temp;
+    }
+    }
+    
     
 }
