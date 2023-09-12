@@ -44,14 +44,14 @@ public class controlLibros {
     }
     
     public String eliminarLibro(int isbn){
-        String cad = null, cad2 = null;
+        String cad = "", cad2 = "";
     int posicion = -1; // Inicializa la posición con un valor que indique que no se encontró el ISBN.
 
     for (int i = 0; i <= ind; i++) {
         if (isbn == oLibros[i].getISBN()) {
             posicion = i;
             cad = "Se eliminó " + oLibros[posicion].getISBN() + " " + oLibros[posicion].getTitulo();
-            break; // Sale del bucle una vez que se encuentra el libro.
+           ; // Sale del bucle una vez que se encuentra el libro.
         }
     }
 
@@ -67,7 +67,7 @@ public class controlLibros {
     
     System.out.println("Arreglo actualizado:");
         for (int i = 0; i <= ind; i++) {
-            cad2= oLibros[i].getISBN() + " " + oLibros[i].getTitulo()+ " " + oLibros[i].getAutor()+ " " + oLibros[i].getEditorial();
+            cad2= cad2 + oLibros[i].getISBN() + " " + oLibros[i].getTitulo()+ " " + oLibros[i].getAutor()+ " " + oLibros[i].getEditorial()+"\n";
         }
     }
     
