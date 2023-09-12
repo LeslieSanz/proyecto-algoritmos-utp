@@ -82,7 +82,7 @@ public class Form extends javax.swing.JFrame {
 
         jLabel7.setText("Editorial");
 
-        cbxGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Drama", "Acción", "Romance", "Autoayuda", "Historico", "No ficción", "Misterio", "Terror", "Infantil" }));
+        cbxGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Drama", "Novela", "Fantasía", "Romance", "Histórico", "Terror", "Infantil", "Ciencia ficción", "Autoayuda", "No ficción" }));
         cbxGenero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxGeneroActionPerformed(evt);

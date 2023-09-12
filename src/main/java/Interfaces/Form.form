@@ -268,16 +268,17 @@
     <Component class="javax.swing.JComboBox" name="cbxGenero">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="9">
+          <StringArray count="10">
             <StringItem index="0" value="Drama"/>
-            <StringItem index="1" value="Acci&#xf3;n"/>
-            <StringItem index="2" value="Romance"/>
-            <StringItem index="3" value="Autoayuda"/>
-            <StringItem index="4" value="Historico"/>
-            <StringItem index="5" value="No ficci&#xf3;n"/>
-            <StringItem index="6" value="Misterio"/>
-            <StringItem index="7" value="Terror"/>
-            <StringItem index="8" value="Infantil"/>
+            <StringItem index="1" value="Novela"/>
+            <StringItem index="2" value="Fantas&#xed;a"/>
+            <StringItem index="3" value="Romance"/>
+            <StringItem index="4" value="Hist&#xf3;rico"/>
+            <StringItem index="5" value="Terror"/>
+            <StringItem index="6" value="Infantil"/>
+            <StringItem index="7" value="Ciencia ficci&#xf3;n"/>
+            <StringItem index="8" value="Autoayuda"/>
+            <StringItem index="9" value="No ficci&#xf3;n"/>
           </StringArray>
         </Property>
       </Properties>

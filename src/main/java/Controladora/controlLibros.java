@@ -13,26 +13,26 @@ public class controlLibros {
     }
     
     public void cargarDatos(){
-        oLibros[0] = new cLibro("Cien años de soledad", 74728, "Gabriel García Márquez", "Vintage Español", "Realismo mágico", 1967, "Español");
-        oLibros[1] = new cLibro("El Gran Gatsby", 73565, "F. Scott Fitzgerald", "Scribner", "Novela contemporánea", 1925, "Inglés");
-        oLibros[2] = new cLibro("1984", 24935, "George Orwell", "Signet Classic", "Distopía", 1949, "Inglés");
-        oLibros[3] = new cLibro("El código Da Vinci", 74278, "Dan Brown", "Vintage Español", "Thriller de conspiración", 2003, "Español");
+        oLibros[0] = new cLibro("Cien años de soledad", 74728, "Gabriel García Márquez", "Vintage Español", "Novela", 1967, "Español");
+        oLibros[1] = new cLibro("El Gran Gatsby", 73565, "F. Scott Fitzgerald", "Scribner", "Novela", 1925, "Inglés");
+        oLibros[2] = new cLibro("1984", 24935, "George Orwell", "Signet Classic", "Ciencia ficción", 1949, "Inglés");
+        oLibros[3] = new cLibro("El código Da Vinci", 74278, "Dan Brown", "Vintage Español", "Novela", 2003, "Español");
         oLibros[4] = new cLibro("Harry Potter y la piedra filosofal", 83621, "J.K. Rowling", "Salamandra", "Fantasía", 1997, "Español");
-        oLibros[5] = new cLibro("Matar un ruiseñor", 20084, "Harper Lee", "Harper Perennial Modern Classics", "Novela clásica", 1960, "Inglés");
-        oLibros[6] = new cLibro("El Hobbit", 28227, "J.R.R. Tolkien", "Houghton Mifflin Harcourt", "Fantasía épica", 1937, "Inglés");
-        oLibros[7] = new cLibro("Orgullo y prejuicio", 90561, "Jane Austen", "CreateSpace Independent Publishing Platform", "Novela romántica", 1813, "Inglés");
-        oLibros[8] = new cLibro("La sombra del viento", 88674, "Carlos Ruiz Zafón", "Penguin Books", "Novela histórica", 2001, "Español");
-        oLibros[9] = new cLibro("Los juegos del hambre", 84369, "Suzanne Collins", "Molino", "Ciencia ficción distópica", 2008, "Español");
-        oLibros[10] = new cLibro("El alquimista", 15007, "Paulo Coelho", "HarperOne", "Ficción espiritual", 1988, "Inglés");
-        oLibros[11] = new cLibro("Rayuela", 15229, "Julio Cortázar", "Cátedra", "Novela experimental", 1963, "Español");
-        oLibros[12] = new cLibro("Los hombres me explican cosas", 40219, "Rebecca Solnit", "Haymarket Books", "Ensayo feminista", 2014, "Inglés");
-        oLibros[13] = new cLibro("El señor de los anillos: La comunidad del anillo", 66, "J.R.R. Tolkien", "Minotauro", "Fantasía épica", 1954, "Español");
-        oLibros[14] = new cLibro("Crimen y castigo", 80599, "Fyodor Dostoevsky", "Oxford University Press", "Novela psicológica", 1866, "Inglés");
-        oLibros[15] = new cLibro("El principito", 13925, "Antoine de Saint-Exupéry", "Harvest Books", "Literatura infantil", 1943, "Inglés");
-        oLibros[16] = new cLibro("Los pilares de la Tierra", 25245, "Ken Follett", "Signet", "Novela histórica", 1989, "Inglés");
-        oLibros[17] = new cLibro("La naranja mecánica", 12836, "Anthony Burgess", "W. W. Norton & Company", "Distopía", 1962, "Inglés");
-        oLibros[18] = new cLibro("La ladrona de libros", 75732, "Markus Zusak", "Vintage Books", "Drama histórico", 2005, "Inglés");
-        oLibros[19] = new cLibro("Los tres mosqueteros", 42341, "Alexandre Dumas", "Penguin Classics", "Aventura histórica", 1844, "Inglés");
+        oLibros[5] = new cLibro("Matar un ruiseñor", 20084, "Harper Lee", "Harper Perennial Modern Classics", "Novela", 1960, "Inglés");
+        oLibros[6] = new cLibro("El Hobbit", 28227, "J.R.R. Tolkien", "Houghton Mifflin Harcourt", "Fantasía", 1937, "Inglés");
+        oLibros[7] = new cLibro("Orgullo y prejuicio", 90561, "Jane Austen", "CreateSpace Independent Publishing Platform", "Romance", 1813, "Inglés");
+        oLibros[8] = new cLibro("La sombra del viento", 88674, "Carlos Ruiz Zafón", "Penguin Books", "Histórico", 2001, "Español");
+        oLibros[9] = new cLibro("Los juegos del hambre", 84369, "Suzanne Collins", "Molino", "Ciencia ficción", 2008, "Español");
+        oLibros[10] = new cLibro("El alquimista", 15007, "Paulo Coelho", "HarperOne", "Drama", 1988, "Inglés");
+        oLibros[11] = new cLibro("Rayuela", 15229, "Julio Cortázar", "Cátedra", "Novela", 1963, "Español");
+        oLibros[12] = new cLibro("It", 15229, "Stephen King", "Scribner", "Terror", 1986, "Español");
+        oLibros[13] = new cLibro("El señor de los anillos: La comunidad del anillo", 66, "J.R.R. Tolkien", "Minotauro", "Fantasía", 1954, "Español");
+        oLibros[14] = new cLibro("Crimen y castigo", 80599, "Fyodor Dostoevsky", "Oxford University Press", "Novela", 1866, "Inglés");
+        oLibros[15] = new cLibro("El principito", 13925, "Antoine de Saint-Exupéry", "Harvest Books", "Infantil", 1943, "Inglés");
+        oLibros[16] = new cLibro("Los pilares de la Tierra", 25245, "Ken Follett", "Signet", "Histórico", 1989, "Inglés");
+        oLibros[17] = new cLibro("La naranja mecánica", 12836, "Anthony Burgess", "W. W. Norton & Company", "Ciencia ficción", 1962, "Inglés");
+        oLibros[18] = new cLibro("La ladrona de libros", 75732, "Markus Zusak", "Vintage Books", "Drama", 2005, "Inglés");
+        oLibros[19] = new cLibro("El exorcista", 42341, "William Peter Blatty", "Penguin Classics", "Terror", 1971, "Inglés");
     }
     
     public void insertarLibro(cLibro libro){
