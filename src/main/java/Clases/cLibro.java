@@ -8,6 +8,12 @@ public class cLibro {
     private String genero;
     private int añoPub;
     private String idioma;
+    
+    //para la lista Enlazada
+    
+    private cLibro sgte;
+    private cLibro ante;
+    
 
     public cLibro(String titulo, int ISBN, String autor, String editorial, String genero, int añoPub, String idioma) {
         this.titulo = titulo;
@@ -18,6 +24,12 @@ public class cLibro {
         this.añoPub = añoPub;
         this.idioma = idioma;
     }
+    
+    public cLibro(int ISBN) {
+        this.ISBN = ISBN;
+    }
+    
+    
 
     public String getTitulo() {
         return titulo;
@@ -78,4 +90,25 @@ public class cLibro {
     public String mostrar(){
         return ISBN+" "+titulo+" "+autor+" "+editorial+" "+genero+" "+añoPub+" "+idioma;
     }
+    
+    
+     //para la lista Enlazada
+
+    public cLibro getSgte() {
+        return sgte;
+    }
+
+    public void setSgte(cLibro sgte) {
+        this.sgte = sgte;
+    }
+
+    public cLibro getAnte() {
+        return ante;
+    }
+
+    public void setAnte(cLibro ante) {
+        this.ante = ante;
+    }
+    
+    
 }
