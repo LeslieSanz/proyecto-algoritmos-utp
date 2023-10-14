@@ -13,12 +13,12 @@ public class MainLDE {
     public static void main(String[] args) {
         ListaEnlazadaDoble dobleE = new ListaEnlazadaDoble();
         int ISBN;
-        ISBN=10; dobleE.Insertar(ISBN);
-        ISBN=2; dobleE.Insertar(ISBN);
-        ISBN=4; dobleE.Insertar(ISBN);
-        ISBN=30; dobleE.Insertar(ISBN);
-        ISBN=15; dobleE.Insertar(ISBN);
-        
+//        ISBN=10; dobleE.Insertar(ISBN);
+//        ISBN=2; dobleE.Insertar(ISBN);
+//        ISBN=4; dobleE.Insertar(ISBN);
+//        ISBN=30; dobleE.Insertar(ISBN);
+//        ISBN=15; dobleE.Insertar(ISBN);
+//        
         System.out.println(dobleE.RecorreListaDobleEnlazada());
         System.out.println(dobleE.EvidenciarListaDobleEnlazada());
 

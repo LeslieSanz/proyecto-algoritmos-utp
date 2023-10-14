@@ -74,6 +74,8 @@ public class Form extends javax.swing.JFrame {
         insertarLDE = new javax.swing.JButton();
         mostrarLED = new javax.swing.JButton();
         borrarLED = new javax.swing.JToggleButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -244,6 +246,20 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton1.setText("Cargar dato LDE");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton2.setText("Evidencia de LDE");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -251,6 +267,9 @@ public class Form extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jToggleButton2)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -315,7 +334,8 @@ public class Form extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(mostrarLED, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(insertarLDE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(borrarLED, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(borrarLED, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jToggleButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,20 +415,6 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(insertarLDE)
-                                .addGap(18, 18, 18)
-                                .addComponent(mostrarLED)
-                                .addGap(18, 18, 18)
-                                .addComponent(borrarLED, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(btnBuscar1)
                         .addGap(18, 18, 18)
@@ -416,8 +422,25 @@ public class Form extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnBuscarXpalabras)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jToggleButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(insertarLDE)
+                                .addGap(18, 18, 18)
+                                .addComponent(mostrarLED)
+                                .addGap(18, 18, 18)
+                                .addComponent(borrarLED, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(27, 27, 27)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButton2)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -520,6 +543,9 @@ public class Form extends javax.swing.JFrame {
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
     oControlLib.cargarDatos();
     oControlLib.mostrarTabla(modelo);
+    
+    
+   
     }//GEN-LAST:event_btnCargarActionPerformed
 
     private void cbxGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGeneroActionPerformed
@@ -542,11 +568,13 @@ public class Form extends javax.swing.JFrame {
 
     private void insertarLDEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertarLDEActionPerformed
     int isbnF= Integer.parseInt(isbn.getText());
-    oLibro= new cLibro(isbnF);    // TODO add your handling code here:
-    enlazadaDoble.Insertar(isbnF);
+    String titul = titulo.getText();
+    oLibro= new cLibro(isbnF, titul);    // TODO add your handling code here:
+    enlazadaDoble.Insertar(oLibro);
     }//GEN-LAST:event_insertarLDEActionPerformed
 
     private void mostrarLEDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarLEDActionPerformed
+    jTextArea1.setText("");
     String listaRecorrida= enlazadaDoble.RecorreListaDobleEnlazada();
     jTextArea1.append(enlazadaDoble.RecorreListaDobleEnlazada());
     }//GEN-LAST:event_mostrarLEDActionPerformed
@@ -555,6 +583,20 @@ public class Form extends javax.swing.JFrame {
     int valorIngresado = Integer.parseInt(isbn.getText());
     enlazadaDoble.eliminarGeneral(valorIngresado);        // TODO add your handling code here:
     }//GEN-LAST:event_borrarLEDActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+ //Cargar lista doblemente enlazada en jtxtarea1
+    
+    enlazadaDoble.cargarDatos();
+    jTextArea1.append(enlazadaDoble.RecorreListaDobleEnlazada()); // Llama al método de inserción con el valor
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    jTextArea1.setText("");
+    String listaRecorrida= enlazadaDoble.EvidenciarListaDobleEnlazada();
+    jTextArea1.append(enlazadaDoble.EvidenciarListaDobleEnlazada());        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
     
     
     /**
@@ -629,6 +671,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JButton mostrarLED;
     private javax.swing.JTable tblDatos;
     private javax.swing.JTextField titulo;
