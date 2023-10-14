@@ -9,7 +9,7 @@ public class cLibro {
     private int añoPub;
     private String idioma;
     
-    //para la lista Enlazada
+    //para la lista Doblemente Enlazada
     
     private cLibro sgte;
     private cLibro ante;
@@ -92,7 +92,7 @@ public class cLibro {
     }
     
     
-     //para la lista Enlazada
+     //para la lista Doblemente Enlazada
 
     public cLibro getSgte() {
         return sgte;

@@ -26,9 +26,9 @@ public class MainLDE {
         
       //  dobleE.eliminaNodoxFinal(); System.out.println(dobleE.EvidenciarListaDobleEnlazada());
         
-      //  dobleE.eliminarEntreNodos(10); System.out.println(dobleE.EvidenciarListaDobleEnlazada());
+       dobleE.eliminarEntreNodos(4); System.out.println(dobleE.EvidenciarListaDobleEnlazada());
     
-        dobleE.eliminarGeneral(15); System.out.println(dobleE.EvidenciarListaDobleEnlazada());
+       //dobleE.eliminarGeneral(4); System.out.println(dobleE.EvidenciarListaDobleEnlazada());
     
     
     
