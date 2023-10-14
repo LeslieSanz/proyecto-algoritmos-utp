@@ -18,7 +18,8 @@ public class frame extends javax.swing.JFrame {
      * Creates new form frame
      */
     public frame() {
-        initComponents();
+       initComponents();
+    enlazadaDoble = new ListaEnlazadaDoble();
     }
 
     /**
@@ -35,7 +36,7 @@ public class frame extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         insertar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
         isbn = new javax.swing.JTextField();
         mostrar = new javax.swing.JButton();
 
@@ -54,7 +55,12 @@ public class frame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Eliminar");
+        eliminar.setText("Eliminar");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
 
         mostrar.setText("mostrar");
         mostrar.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +87,7 @@ public class frame extends javax.swing.JFrame {
                                 .addComponent(isbn, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton2)
+                                    .addComponent(eliminar)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addGap(18, 18, 18)
@@ -103,7 +109,7 @@ public class frame extends javax.swing.JFrame {
                     .addComponent(insertar)
                     .addComponent(mostrar))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(eliminar)
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(142, Short.MAX_VALUE))
@@ -126,6 +132,11 @@ public class frame extends javax.swing.JFrame {
      ;
      jTextArea1.append(enlazadaDoble.RecorreListaDobleEnlazada());
     }//GEN-LAST:event_mostrarActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+    int valorIngresado = Integer.parseInt(isbn.getText());
+    enlazadaDoble.eliminarGeneral(valorIngresado);
+    }//GEN-LAST:event_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,9 +174,9 @@ public class frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton eliminar;
     private javax.swing.JButton insertar;
     private javax.swing.JTextField isbn;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

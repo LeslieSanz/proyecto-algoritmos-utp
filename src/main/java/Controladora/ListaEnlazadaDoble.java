@@ -51,7 +51,7 @@ public class ListaEnlazadaDoble {
           p = p.getSgte();//y p avanza al siguiente nodo
       } 
       
-      return cadena;
+      return cadena+"\n";
     }
    
     
