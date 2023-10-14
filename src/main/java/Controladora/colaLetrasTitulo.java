@@ -32,33 +32,29 @@ public class colaLetrasTitulo {
           if(!letrasT[j].equals(" ")){
           last++;
           cola[last] = letrasT[j];
+         // letra=letrasT[j];
           if (first == -1) {
             first = 0;
           }
           }
         }
-        
-        
+    }
+    
+    public String acceso(){
+        String letra = null;
+        if(first>-1){
+            letra=cola[first];
+        }
+        return letra;   
     }
     
     public String muestraElementos(){
         String cadena="";
         if(first>-1){
             for(int i=first; i <= last;i++){
-                cadena+=cola[i]+"";
+                cadena+=cola[i]+" ";
             }
         }
         return cadena;
-    }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    }     
 }

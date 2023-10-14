@@ -17,6 +17,7 @@ public class NewMain {
         int n=50;
         colaLetrasTitulo oCola=new colaLetrasTitulo(n);
         oCola.insertaTituloEnCola("cien años de soledad");System.out.println(oCola.muestraElementos());
+        System.out.println(oCola.acceso());
 //        oCola.insertaTituloEnCola(20);System.out.println(oCola.muestraElementos());
 //        oCola.insertaElemento(30);System.out.println(oCola.muestraElementos());
 //        oCola.insertaElemento(40);System.out.println(oCola.muestraElementos());
