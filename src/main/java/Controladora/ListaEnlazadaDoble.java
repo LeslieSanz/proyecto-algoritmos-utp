@@ -5,7 +5,8 @@
 package Controladora;
 
 import Clases.cLibro;
-
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author yosse
@@ -36,6 +37,30 @@ public class ListaEnlazadaDoble {
     Insertar(new cLibro("El exorcista", 42341, "William Peter Blatty", "Penguin Classics", "Terror", 1971, "Inglés"));
 }
 
+//Metodo para ponerlo en una tabla
+       
+         public void mostrarTabla(DefaultTableModel modelo) {
+        // Obtener una referencia al inicio de la lista enlazada
+         p = inicio;
+
+        // Limpiar el modelo antes de llenarlo
+        modelo.setRowCount(0);
+
+        // Llenar el DefaultTableModel con los datos de la lista enlazada
+        while (p != null) {
+            Object[] rowData = {
+                p.getISBN(),
+                p.getTitulo(),
+                p.getAutor(),
+                p.getGenero(),
+                p.getEditorial(),
+                p.getIdioma(),
+                p.getAñoPub()
+            };
+            modelo.addRow(rowData);
+            p = p.getSgte();
+        }
+    }
 
  
     //los valores del isbn del indice que se agreguen a la lista enlazada mi amiga es una chuchas
