@@ -71,7 +71,7 @@ public class ListaEnlazadaDoble {
       p =inicio;
       q=inicio;
       while(p != null){
-          cadena = cadena +p.getISBN()+" "+ p.getTitulo()+"\n"; // Agrega el ISBN del nodo actual a la cadena
+          cadena = cadena +p.getISBN()+" "+ p.getTitulo()+" "+p.getAutor()+" "+p.getGenero()+" "+p.getEditorial()+" "+p.getIdioma()+" "+p.getAñoPub()+"\n"; // Agrega el ISBN del nodo actual a la cadena
           q=p;//q ahora sigue al nodo actuar 
           p = p.getSgte();//y p avanza al siguiente nodo
       } 
