@@ -24,10 +24,17 @@ public class cLibro {
         this.añoPub = añoPub;
         this.idioma = idioma;
     }
-    
+
+    public cLibro( int ISBN, String titulo) {
+        this.titulo = titulo;
+        this.ISBN = ISBN;
+    }
+
     public cLibro(int ISBN) {
         this.ISBN = ISBN;
     }
+    
+    
     
     
 
