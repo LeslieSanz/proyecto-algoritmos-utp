@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class controlLibros {
-    public cLibro oLibros[];
+    private cLibro oLibros[];
     private int ind;
 
     public controlLibros(int n) {

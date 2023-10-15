@@ -8,6 +8,13 @@ public class cLibro {
     private String genero;
     private int añoPub;
     private String idioma;
+    private int prioridad;
+
+    public cLibro(String titulo, int prioridad) {
+        this.titulo = titulo;
+        this.prioridad = prioridad;
+    }
+    
 
     public cLibro(String titulo, int ISBN, String autor, String editorial, String genero, int añoPub, String idioma) {
         this.titulo = titulo;
@@ -77,5 +84,13 @@ public class cLibro {
     
     public String mostrar(){
         return ISBN+" "+titulo+" "+autor+" "+editorial+" "+genero+" "+añoPub+" "+idioma;
+    }
+
+    public int getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(int prioridad) {
+        this.prioridad = prioridad;
     }
 }
