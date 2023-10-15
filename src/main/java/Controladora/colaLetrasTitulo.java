@@ -10,11 +10,11 @@ package Controladora;
  */
 public class colaLetrasTitulo {
     private String cola[];
-    private int first, last, tamaño;
+    private int first, last, tamaño, tamañoTitulo, j;
     
-    public colaLetrasTitulo(int n) {
-        cola=new String[n];
-        tamaño=n;
+    public colaLetrasTitulo(String titulo) {
+        tamaño= hallarTamañoCola(titulo);
+        cola=new String[tamaño];
         colaVacia();
     }
     
@@ -22,16 +22,31 @@ public class colaLetrasTitulo {
         first=-1; last = -1;
     }
     
+    public int hallarTamañoCola(String titulo){
+        String[] letrasT= titulo.split("");
+        tamañoTitulo = letrasT.length;
+        int esp=0;
+        
+        for (j=0;j < tamañoTitulo && last < tamañoTitulo - 1; j++) {
+            if(letrasT[j].equals(" ")){
+                esp=esp+1;
+            }
+        }
+        tamaño=tamañoTitulo-esp;
+//        System.out.println(tamaño);
+        return tamaño;
+    }
+    
     
     public void insertaTituloEnCola(String titulo) {
         String[] letrasT= titulo.split("");
-        tamaño = letrasT.length;
-        int j;
+        tamañoTitulo = letrasT.length;
         
-        for (j=0;j < tamaño && last < tamaño - 1; j++) {
+        for (j=0;j < tamañoTitulo && last < tamaño-1; j++) {
           if(!letrasT[j].equals(" ")){
           last++;
           cola[last] = letrasT[j];
+//              System.out.println(last);
          // letra=letrasT[j];
           if (first == -1) {
             first = 0;
@@ -56,5 +71,9 @@ public class colaLetrasTitulo {
             }
         }
         return cadena;
-    }     
+    }
+    
+    
+    
+    
 }

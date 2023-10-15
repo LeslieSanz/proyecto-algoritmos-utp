@@ -14,10 +14,19 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int n=50;
-        colaLetrasTitulo oCola=new colaLetrasTitulo(n);
-        oCola.insertaTituloEnCola("cien años de soledad");System.out.println(oCola.muestraElementos());
-        System.out.println(oCola.acceso());
+        int m=17, p=20, q=20;
+        String titulo="cien años de soledad  mu.jer";
+        colaLetrasTitulo oCola=new colaLetrasTitulo(titulo);
+        
+        
+        oCola.insertaTituloEnCola(titulo);System.out.println(oCola.muestraElementos());
+        String letras = oCola.muestraElementos();
+        pilaLetrasTitulos oPila=new pilaLetrasTitulos(letras);
+        oPila.seleccionarLetrasEnPilas(letras);
+        System.out.println(oPila.muestraValoresPila1());
+        System.out.println(oPila.muestraValoresPila2());
+        System.out.println(oPila.muestraValoresPila3());
+//        System.out.println(oCola.acceso());
 //        oCola.insertaTituloEnCola(20);System.out.println(oCola.muestraElementos());
 //        oCola.insertaElemento(30);System.out.println(oCola.muestraElementos());
 //        oCola.insertaElemento(40);System.out.println(oCola.muestraElementos());
