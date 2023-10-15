@@ -12,12 +12,8 @@ public class pilaLetrasTitulos {
     private String pila1[], pila2[], pila3[];
     private int tope1, tope2, tope3;
     private int tamaño1, tamaño2, tamaño3, j;
-//    String[] letrasT;
     
     public pilaLetrasTitulos(String letras){
-//        letras = cola.muestraElementos();
-//        letrasT= letras.split("");
-//        tamañocola = letrasT.length;
        tamaño1=hallarTamañoPilas1(letras);
        tamaño2=hallarTamañoPilas2(letras);
        tamaño3=hallarTamañoPilas3(letras);
@@ -84,7 +80,6 @@ public class pilaLetrasTitulos {
 //        String letras = colaLetras.muestraElementos();
         String[] letrasT= letras.split("");
         int tamañocola = letrasT.length;
-        System.out.println(letras);
         
         for (j=0;j < tamañocola; j++) {
             if("AEIOUaeiou".contains(letrasT[j]) && tope1<tamaño1-1){
@@ -99,8 +94,6 @@ public class pilaLetrasTitulos {
                         tope3++;
                         pila3[tope3]=letrasT[j];
                     }
-                
-            
         }
     }
     

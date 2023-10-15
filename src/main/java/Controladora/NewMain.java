@@ -26,14 +26,6 @@ public class NewMain {
         System.out.println(oPila.muestraValoresPila1());
         System.out.println(oPila.muestraValoresPila2());
         System.out.println(oPila.muestraValoresPila3());
-//        System.out.println(oCola.acceso());
-//        oCola.insertaTituloEnCola(20);System.out.println(oCola.muestraElementos());
-//        oCola.insertaElemento(30);System.out.println(oCola.muestraElementos());
-//        oCola.insertaElemento(40);System.out.println(oCola.muestraElementos());
-//        oCola.insertaElemento(50);System.out.println(oCola.muestraElementos());
-//        oCola.eliminaElemento();System.out.println(oCola.muestraElementos());
-//        oCola.acceso();System.out.println(oCola.muestraElementos());
-//        oCola.eliminaElemento();System.out.println(oCola.muestraElementos());
     }
     
 }
