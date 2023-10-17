@@ -63,7 +63,7 @@ public class ListaEnlazadaDoble {
     }
 
  
-    //los valores del isbn del indice que se agreguen a la lista enlazada mi amiga es una chuchas
+
    public void Insertar(cLibro libro) {//insertar ordenadamente de menor a mayor
     nuevo = libro;
     
