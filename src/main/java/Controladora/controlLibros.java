@@ -93,6 +93,7 @@ public class controlLibros {
                 oLibros[i].getEditorial(), 
                 oLibros[i].getIdioma(), 
                 oLibros[i].getAñoPub(), 
+                oLibros[i].getPrioridad(),
                 };
             modelo.addRow(data);
         }
@@ -206,6 +207,16 @@ public class controlLibros {
         if (isbn==oLibros[indice].getISBN()) 
             return oLibros[indice].getISBN()+" "+oLibros[indice].getTitulo()+" "+oLibros[indice].getAutor();
         else return "No se encontró";
+    }
+    
+    public cLibro BuscarUno(int isbn){
+        int indice=0;  //indMayor es el ultimoindice del arreglo, el lenght recorre todos pero siempre es
+        while (indice<ind && isbn!=oLibros[indice].getISBN()) {
+            indice++;
+        }
+        if (isbn==oLibros[indice].getISBN()) 
+            return oLibros[indice];
+        else return null;
     }
     
     //Buscar genero y año de publicacion (es en lista desordenada y el profe dijo que podiamos escoger los campos)
