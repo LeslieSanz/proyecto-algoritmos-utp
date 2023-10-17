@@ -124,18 +124,6 @@ public class ListaEnlazadaDoble {
     }
 
 
-// Método para obtener el ISBN del último nodo
-private int obtenerISBNUltimoNodo() {
-    if (inicio != null) {//si la lista no esta vacia
-        p = inicio;//inicializamos p como inicio
-        while (p.getSgte() != null) {//si el siguiente nodo existe
-            p = p.getSgte();//entonces p se actualiza para q sea el siguiente hasta que sea igual a null el p.getSgte()
-        }
-        return p.getISBN(); //me retorna el valor del ISBN del nodo p
-    }
-    return -1; // -1 me indica que la lista esta vacia
-}
-
 
      public void eliminar(int ISBN) {
     //Primero verifica si la lista esta vacia
