@@ -174,7 +174,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txttitulo">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Historic" size="14" style="2"/>
             </Property>

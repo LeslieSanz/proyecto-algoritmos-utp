@@ -76,7 +76,6 @@ public class FormCyP extends javax.swing.JFrame {
             }
         });
 
-        txttitulo.setEditable(false);
         txttitulo.setFont(new java.awt.Font("Segoe UI Historic", 2, 14)); // NOI18N
         txttitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

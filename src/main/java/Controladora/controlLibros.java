@@ -9,7 +9,7 @@ public class controlLibros {
 
     public controlLibros(int n) {
         oLibros= new cLibro[n];
-        ind=19;
+        ind=24;
     }
     
     public void cargarDatos(){
@@ -33,6 +33,12 @@ public class controlLibros {
         oLibros[17] = new cLibro("La naranja mecánica", 12836, "Anthony Burgess", "W. W. Norton & Company", "Ciencia ficción", 1962, "Inglés");
         oLibros[18] = new cLibro("La ladrona de libros", 75732, "Markus Zusak", "Vintage Books", "Drama", 2005, "Inglés");
         oLibros[19] = new cLibro("El exorcista", 42341, "William Peter Blatty", "Penguin Classics", "Terror", 1971, "Inglés");
+        oLibros[20] = new cLibro("Don Quijote de la Mancha", 12345, "Miguel de Cervantes Saavedra", "Editorial", "Novela", 1605, "Español");
+        oLibros[21] = new cLibro("Mujer en punto de exasperación", 67890, "Autor Anónimo", "Editorial XYZ", "Novela", 2022, "Español");
+        oLibros[22] = new cLibro("¡Aventuras en la selva!", 54321, "Autor Aventurero", "Editorial Aventuras", "Aventura", 2020, "Español");
+        oLibros[23] = new cLibro("Historias de amor y odio: ¿Quién ganará?", 98765, "Escritor Desconocido", "Editorial XYZ", "Drama", 2010, "Español");
+        oLibros[24] = new cLibro("El misterioso caso del 'Objeto Perdido'", 11111, "Sherlock Holmes", "Editorial Detectives", "Misterio", 1890, "Inglés");
+
     }
     
     public void insertarLibro(cLibro libro){

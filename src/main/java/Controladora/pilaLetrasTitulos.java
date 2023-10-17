@@ -69,7 +69,7 @@ public class pilaLetrasTitulos {
         int tamañocola = letrasT.length;
         
         for (j = 0; j < tamañocola; j++) {
-            if (".,:;".contains(letrasT[j]))
+            if (".,':;¿?¡!1234567890".contains(letrasT[j]))
                 tamaño3++;
         }
         return tamaño3;
@@ -90,7 +90,7 @@ public class pilaLetrasTitulos {
                     tope2++;
                     pila2[tope2]=letrasT[j];
                 }else
-                    if(".,:;".contains(letrasT[j]) && tope3<tamaño3-1){
+                    if(".,':;¿?¡!1234567890".contains(letrasT[j]) && tope3<tamaño3-1){
                         tope3++;
                         pila3[tope3]=letrasT[j];
                     }
@@ -121,21 +121,21 @@ public class pilaLetrasTitulos {
     public String muestraValoresPila1(){
         String cadena="";
         for(int i=0; i<=tope1; i++){
-            cadena+=pila1[i]+"  ";
+            cadena+=pila1[i]+" ";
         }return cadena;
     }
     
     public String muestraValoresPila2(){
         String cadena="";
         for(int i=0; i<=tope2; i++){
-            cadena+=pila2[i]+"  ";
+            cadena+=pila2[i]+" ";
         }return cadena;
     }
     
     public String muestraValoresPila3(){
         String cadena="";
         for(int i=0; i<=tope3; i++){
-            cadena+=pila3[i]+"  ";
+            cadena+=pila3[i]+" ";
         }return cadena;
     } 
 }
