@@ -5,7 +5,6 @@
 package Interfaces;
 
 import Controladora.colaLetrasTitulo;
-import Controladora.pilaLetrasTitulos;
 
 /**
  *
@@ -13,7 +12,6 @@ import Controladora.pilaLetrasTitulos;
  */
 public class FormCyP extends javax.swing.JFrame {
     colaLetrasTitulo colaLT;
-    pilaLetrasTitulos pilaLT;
 
     /**
      * Creates new form FormCyP
@@ -22,6 +20,7 @@ public class FormCyP extends javax.swing.JFrame {
         initComponents();
         setAlwaysOnTop(true);
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -205,34 +204,39 @@ public class FormCyP extends javax.swing.JFrame {
     }//GEN-LAST:event_txttituloActionPerformed
 
     private void btnColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColaActionPerformed
-        String titulo = txttitulo.getText();
-        colaLT=new colaLetrasTitulo(titulo);
-        colaLT.insertaTituloEnCola(titulo);
+        String letrasTitulo = txttitulo.getText();
+        colaLT=new colaLetrasTitulo(letrasTitulo);   
+        colaLT.insertaTituloEnCola(letrasTitulo);
         txtcola.setText(colaLT.muestraElementos());
     }//GEN-LAST:event_btnColaActionPerformed
 
     private void btnPilasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPilasActionPerformed
-        String letras = txtcola.getText();
-        pilaLT=new pilaLetrasTitulos(letras);
-        pilaLT.seleccionarLetrasEnPilas(letras);
-        txtpilavocales.setText(pilaLT.muestraValoresPila1());
-        txtpilaconsonantes.setText(pilaLT.muestraValoresPila2());
-        txtpilaotros.setText(pilaLT.muestraValoresPila3());
+        String letrasTitulo = txtcola.getText();
+        // Comprueba si la cola está vacía
+    if (colaLT != null && !colaLT.muestraElementos().isEmpty()) {
+        // Mueve la siguiente letra de la cola a la pila correspondiente
+        colaLT.seleccionarLetrasEnPilas(letrasTitulo);
+        txtpilavocales.setText(colaLT.muestraValoresPila1());
+        txtpilaconsonantes.setText(colaLT.muestraValoresPila2());
+        txtpilaotros.setText(colaLT.muestraValoresPila3());
+
+        // Actualiza el texto mostrado en txtcola para reflejar la letra eliminada
+        txtcola.setText(colaLT.muestraElementos());
+    }
     }//GEN-LAST:event_btnPilasActionPerformed
 
     private void btnColaPilasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColaPilasActionPerformed
-        //colas
-        String titulo = txttitulo.getText();
-        colaLT=new colaLetrasTitulo(titulo);
-        colaLT.insertaTituloEnCola(titulo);
-        txtcola.setText(colaLT.muestraElementos());
-        //pilas
-        String letras = txtcola.getText();
-        pilaLT=new pilaLetrasTitulos(letras);
-        pilaLT.seleccionarLetrasEnPilas(letras);
-        txtpilavocales.setText(pilaLT.muestraValoresPila1());
-        txtpilaconsonantes.setText(pilaLT.muestraValoresPila2());
-        txtpilaotros.setText(pilaLT.muestraValoresPila3());
+//        //colas
+//        String titulo = txttitulo.getText();
+//        colaLT=new colaLetrasTitulo(titulo);
+//        colaLT.insertaTituloEnCola(titulo);
+//        txtcola.setText(colaLT.muestraElementos());
+//        //pilas
+//        String letrasTitulo = txtcola.getText();
+//        colaLT.seleccionarLetrasEnPilas(letrasTitulo);
+//        txtpilavocales.setText(colaLT.muestraValoresPila1());
+//        txtpilaconsonantes.setText(colaLT.muestraValoresPila2());
+//        txtpilaotros.setText(colaLT.muestraValoresPila3());
     }//GEN-LAST:event_btnColaPilasActionPerformed
 
     /**
