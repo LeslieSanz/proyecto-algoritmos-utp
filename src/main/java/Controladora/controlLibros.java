@@ -24,7 +24,7 @@ public class controlLibros {
         oLibros[8] = new cLibro("La sombra del viento", 88674, "Carlos Ruiz Zafón", "Penguin Books", "Histórico", 2001, "Español");
         oLibros[9] = new cLibro("Los juegos del hambre", 84369, "Suzanne Collins", "Molino", "Ciencia ficción", 2008, "Español");
         oLibros[10] = new cLibro("El alquimista", 15007, "Paulo Coelho", "HarperOne", "Drama", 1988, "Inglés");
-        oLibros[11] = new cLibro("Rayuela", 15229, "Julio Cortázar", "Cátedra", "Novela", 1963, "Español");
+        oLibros[11] = new cLibro("Rayuela", 15631, "Julio Cortázar", "Cátedra", "Novela", 1963, "Español");
         oLibros[12] = new cLibro("It", 15229, "Stephen King", "Scribner", "Terror", 1986, "Español");
         oLibros[13] = new cLibro("El señor de los anillos: La comunidad del anillo", 66, "J.R.R. Tolkien", "Minotauro", "Fantasía", 1954, "Español");
         oLibros[14] = new cLibro("Crimen y castigo", 80599, "Fyodor Dostoevsky", "Oxford University Press", "Novela", 1866, "Inglés");
