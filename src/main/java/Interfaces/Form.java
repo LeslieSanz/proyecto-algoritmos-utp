@@ -25,6 +25,7 @@ public class Form extends javax.swing.JFrame {
     DefaultTableModel modelo = new DefaultTableModel();
     DefaultTableModel modelo1 = new DefaultTableModel();
     FormColaPrioridad cp;
+    FormCyP cyp;
     
     private void establecerColumnas(){
         modelo.addColumn("ISBN");
@@ -143,6 +144,14 @@ public class Form extends javax.swing.JFrame {
         tblDatos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblDatosMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblDatosMousePressed(evt);
+            }
+        });
+        tblDatos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tblDatosKeyPressed(evt);
             }
         });
         jScrollPane2.setViewportView(tblDatos);
@@ -699,12 +708,8 @@ public class Form extends javax.swing.JFrame {
 
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
         row = tblDatos.getSelectedRow();
-        FormCyP cyp = new FormCyP();
-        cyp.setVisible(true);
-        cyp.txttitulo.setText(tblDatos.getValueAt(row, 1).toString());
-        
+        cyp.setVisible(false);
         cp.txtLibro.setText(tblDatos.getValueAt(row, 0).toString());
-        
     }//GEN-LAST:event_tblDatosMouseClicked
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
@@ -738,6 +743,20 @@ public class Form extends javax.swing.JFrame {
         cp.setVisible(true);        
         
     }//GEN-LAST:event_btnColaPrioridadActionPerformed
+
+    private void tblDatosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMousePressed
+
+    }//GEN-LAST:event_tblDatosMousePressed
+
+    private void tblDatosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblDatosKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+             cyp = new FormCyP();
+             cyp.setVisible(true);
+             
+             row = tblDatos.getSelectedRow();
+             cyp.txttitulo.setText(tblDatos.getValueAt(row, 1).toString());
+         }
+    }//GEN-LAST:event_tblDatosKeyPressed
     
     
     /**

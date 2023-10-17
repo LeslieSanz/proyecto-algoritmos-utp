@@ -20,6 +20,7 @@ public class FormCyP extends javax.swing.JFrame {
      */
     public FormCyP() {
         initComponents();
+        setAlwaysOnTop(true);
     }
 
     /**

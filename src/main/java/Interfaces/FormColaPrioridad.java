@@ -23,6 +23,7 @@ public class FormColaPrioridad extends javax.swing.JFrame {
         this.oControlLib = oControlLib;
         initComponents();
         establecerColumnas();
+        setAlwaysOnTop(true);
         pnlDatos.setVisible(false);
     }
     
