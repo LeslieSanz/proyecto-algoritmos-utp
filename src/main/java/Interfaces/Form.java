@@ -610,7 +610,7 @@ public class Form extends javax.swing.JFrame {
     //eliminar en array
     oControlLib.eliminarLibro(isbnF);
     //eliminar en lista doblemente enlazada
-    enlazadaDoble.eliminarGeneral(isbnF);
+    enlazadaDoble.eliminar(isbnF);
     }//GEN-LAST:event_eliminarActionPerformed
 
     private void btnOrdenarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarAutorActionPerformed
