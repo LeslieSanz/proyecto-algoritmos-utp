@@ -10,7 +10,6 @@ public class cLibro {
     private String idioma;
 
     //para la lista Doblemente Enlazada
-    
     private cLibro sgte;
     private cLibro ante;
 
@@ -30,6 +29,7 @@ public class cLibro {
         this.genero = genero;
         this.añoPub = añoPub;
         this.idioma = idioma;
+        this.prioridad=0;
     }
 
     public cLibro( int ISBN, String titulo) {

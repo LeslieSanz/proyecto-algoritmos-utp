@@ -11,27 +11,27 @@ public class mainCola {
     
     public static void main(String[] args) {
         int n=5;
-        Cola oLibrosCola=new Cola(n);
+        ColaPrioridad oLibrosCola=new ColaPrioridad(n);
         
-        cLibro libro1 = new cLibro("Hamlet", 0);
+        cLibro libro1 = new cLibro("Hamlet", 1);
         cLibro libro2 = new cLibro("La odisea", 1);
         cLibro libro3 = new cLibro("Romeo", 0);
         cLibro libro4 = new cLibro("La iliada", 1);
-        cLibro libro5 = new cLibro("La peste", 0);
+        cLibro libro5 = new cLibro("La peste", 1);
         
         oLibrosCola.insertaLibro(libro1);
+        System.out.println(oLibrosCola.muestraLibros());
         oLibrosCola.insertaLibro(libro2);
+        System.out.println(oLibrosCola.muestraLibros());
         oLibrosCola.insertaLibro(libro3);
+        System.out.println(oLibrosCola.muestraLibros());
         oLibrosCola.insertaLibro(libro4);
+        System.out.println(oLibrosCola.muestraLibros());
         oLibrosCola.insertaLibro(libro5);
-        
-        
         
         System.out.println(oLibrosCola.muestraLibros());
         oLibrosCola.eliminaElemento();
         System.out.println(oLibrosCola.muestraLibros());
-        
-        //Devuelve el indice del elemento con mayor prioridad
         
         
     }
