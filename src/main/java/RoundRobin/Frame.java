@@ -110,6 +110,7 @@ public class Frame extends javax.swing.JFrame {
         jLabelEstado1.setText("PROCESOS");
         jLabelEstado1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        TxtFinal.setBackground(new java.awt.Color(204, 255, 255));
         TxtFinal.setColumns(20);
         TxtFinal.setRows(5);
         jScrollPane2.setViewportView(TxtFinal);
