@@ -264,10 +264,6 @@ public class FormCyP extends javax.swing.JFrame {
     private void btnPilasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPilasActionPerformed
         String letrasTitulo = txtcola.getText();
         
-//        txttamañopila1.setText(Integer.toString(colapilaLT.hallarTamañoPilas1(letrasTitulo)));
-//        txttamañopila2.setText(Integer.toString(colapilaLT.hallarTamañoPilas2(letrasTitulo)));
-//        txttamañopila3.setText(Integer.toString(colapilaLT.hallarTamañoPilas3(letrasTitulo)));
-//        if (colapilaLT != null && !colapilaLT.muestraElementos().isEmpty()) {
         // Mueve la siguiente letra de la cola a la pila correspondiente
         colapilaLT.seleccionarLetrasEnPilas(letrasTitulo);
         txtpilavocales.setText(colapilaLT.muestraValoresPila1());
@@ -276,7 +272,6 @@ public class FormCyP extends javax.swing.JFrame {
 
         // Actualiza el texto mostrado en txtcola para reflejar la letra eliminada
         txtcola.setText(colapilaLT.muestraElementos());
-       // }
     }//GEN-LAST:event_btnPilasActionPerformed
 
     private void txtcolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcolaActionPerformed

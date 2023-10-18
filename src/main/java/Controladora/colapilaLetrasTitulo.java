@@ -56,6 +56,7 @@ public class colapilaLetrasTitulo {
         String[] letrasT= titulo.split("");
         tamañoTitulo = letrasT.length;
         int esp=0;
+        tamaño=0;
         
         for (j=0;j < tamañoTitulo && last < tamañoTitulo - 1; j++) {
             if(letrasT[j].equals(" ")){
@@ -103,33 +104,39 @@ public class colapilaLetrasTitulo {
     public int hallarTamañoPilas1(String letrasTitulo){
         String[] letrasT= letrasTitulo.split("");
         int tamañocola = letrasT.length;
+        tamaño1=0;
         
         for (j = 0; j < tamañocola; j++) {
             if ("AEIOUaeiouÁÉÍÓÚáéíóú".contains(letrasT[j]))
                 tamaño1++;
         }
+        System.out.println(tamaño1);
         return tamaño1;
     }
     
     public int hallarTamañoPilas2(String letrasTitulo){
         String[] letrasT= letrasTitulo.split("");
         int tamañocola = letrasT.length;
+        tamaño2=0;
         
         for (j = 0; j < tamañocola; j++) {
             if ("BCDFGHJKLMNÑOPQRSTUWXYZbcdfghjklmnñpqrstvwxyz".contains(letrasT[j]))
                 tamaño2++;
         }
+         System.out.println(tamaño2);
         return tamaño2;
     }
     
     public int hallarTamañoPilas3(String letrasTitulo){
         String[] letrasT= letrasTitulo.split("");
         int tamañocola = letrasT.length;
+        tamaño3=0;
         
         for (j = 0; j < tamañocola; j++) {
             if (".,':;¿?¡!1234567890".contains(letrasT[j]))
                 tamaño3++;
         }
+         System.out.println(tamaño3);
         return tamaño3;
     }
 
@@ -154,30 +161,6 @@ public class colapilaLetrasTitulo {
                     }
         }if(first> last)
                     colaVacia(); 
-    }
-    
-    public String eliminarElementoPila1(String vocales){
-        vocales="";
-        if(tope1>-1){
-            vocales=pila1[tope1];
-            tope1--;
-        }return vocales;          
-    }
-    
-    public String eliminarElementoPila2(String consonantes){
-        consonantes="";
-        if(tope2>-1){
-            consonantes=pila2[tope2];
-            tope2--;
-        }return consonantes;          
-    }
-    
-    public String eliminarElementoPila3(String otros){
-        otros="";
-        if(tope3>-1){
-            otros=pila3[tope3];
-            tope3--;
-        }return otros;          
     }
     
     public String acceso1(){
