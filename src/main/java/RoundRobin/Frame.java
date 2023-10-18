@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Frame extends javax.swing.JFrame {
-    //.
+    //.-
     int Contador; // Contador del total de procesos que se van ingresando
     private Proceso proceso;
     private int quantumValue; // Variable para almacenar el valor de Quantum
