@@ -4,14 +4,14 @@
  */
 package Interfaces;
 
-import Controladora.colaLetrasTitulo;
+import Controladora.colapilaLetrasTitulo;
 
 /**
  *
  * @author esther
  */
 public class FormCyP extends javax.swing.JFrame {
-    colaLetrasTitulo colaLT;
+    colapilaLetrasTitulo colapilaLT;
 
     /**
      * Creates new form FormCyP
@@ -31,11 +31,11 @@ public class FormCyP extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnCola = new javax.swing.JButton();
         btnPilas = new javax.swing.JButton();
-        btnColaPilas = new javax.swing.JButton();
         txttitulo = new javax.swing.JTextField();
         txtcola = new javax.swing.JTextField();
         txtpilavocales = new javax.swing.JTextField();
@@ -46,6 +46,14 @@ public class FormCyP extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        txttamañocola = new javax.swing.JTextField();
+        txttamañopila1 = new javax.swing.JTextField();
+        txttamañopila2 = new javax.swing.JTextField();
+        txttamañopila3 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+
+        jLabel7.setText("jLabel7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -68,13 +76,6 @@ public class FormCyP extends javax.swing.JFrame {
             }
         });
 
-        btnColaPilas.setText("Insertar");
-        btnColaPilas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnColaPilasActionPerformed(evt);
-            }
-        });
-
         txttitulo.setFont(new java.awt.Font("Segoe UI Historic", 2, 14)); // NOI18N
         txttitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +85,11 @@ public class FormCyP extends javax.swing.JFrame {
 
         txtcola.setEditable(false);
         txtcola.setFont(new java.awt.Font("Segoe UI Historic", 2, 14)); // NOI18N
+        txtcola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcolaActionPerformed(evt);
+            }
+        });
 
         txtpilavocales.setEditable(false);
         txtpilavocales.setFont(new java.awt.Font("Segoe UI Historic", 2, 14)); // NOI18N
@@ -109,87 +115,127 @@ public class FormCyP extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel6.setText("COLAS Y PILAS");
 
+        txttamañocola.setEditable(false);
+        txttamañocola.setFont(new java.awt.Font("Segoe UI Historic", 2, 14)); // NOI18N
+
+        txttamañopila1.setEditable(false);
+        txttamañopila1.setFont(new java.awt.Font("Segoe UI Historic", 2, 14)); // NOI18N
+
+        txttamañopila2.setEditable(false);
+        txttamañopila2.setFont(new java.awt.Font("Segoe UI Historic", 2, 14)); // NOI18N
+
+        txttamañopila3.setEditable(false);
+        txttamañopila3.setFont(new java.awt.Font("Segoe UI Historic", 2, 14)); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel8.setText("Tamaño");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btnPilas)
+                                        .addGap(18, 18, 18))
+                                    .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(btnCola)
+                        .addGap(292, 292, 292)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtpilaotros, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
-                                    .addComponent(txtpilavocales, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtcola, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtpilaconsonantes, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
+                                .addGap(147, 147, 147)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtcola, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtpilavocales, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtpilaconsonantes, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtpilaotros, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btnCola)
-                                        .addGap(42, 42, 42)
-                                        .addComponent(btnPilas)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnColaPilas))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                                        .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(32, 32, 32))
+                                        .addGap(33, 33, 33)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel4)))
+                                    .addComponent(jLabel3))
+                                .addGap(282, 282, 282)))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txttamañopila1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txttamañocola, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txttamañopila2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txttamañopila3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel6)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(32, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(51, 51, 51))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel6)
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCola)
-                            .addComponent(btnPilas)
-                            .addComponent(btnColaPilas)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(199, 199, 199)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtcola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))))
+                .addGap(17, 17, 17)
+                .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCola)
+                    .addComponent(btnPilas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtcola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txttamañocola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
                     .addComponent(txtpilavocales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(txttamañopila1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
                     .addComponent(txtpilaconsonantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(txttamañopila2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
                     .addComponent(txtpilaotros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addContainerGap(41, Short.MAX_VALUE))
+                    .addComponent(txttamañopila3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,39 +251,37 @@ public class FormCyP extends javax.swing.JFrame {
 
     private void btnColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColaActionPerformed
         String letrasTitulo = txttitulo.getText();
-        colaLT=new colaLetrasTitulo(letrasTitulo);   
-        colaLT.insertaTituloEnCola(letrasTitulo);
-        txtcola.setText(colaLT.muestraElementos());
+        colapilaLT=new colapilaLetrasTitulo(letrasTitulo);   
+        colapilaLT.insertaTituloEnCola(letrasTitulo);
+        txtcola.setText(colapilaLT.muestraElementos());
+        txttamañocola.setText(Integer.toString(colapilaLT.hallarTamañoCola(letrasTitulo)));
+        
+        txttamañopila1.setText(Integer.toString(colapilaLT.hallarTamañoPilas1(letrasTitulo)));
+        txttamañopila2.setText(Integer.toString(colapilaLT.hallarTamañoPilas2(letrasTitulo)));
+        txttamañopila3.setText(Integer.toString(colapilaLT.hallarTamañoPilas3(letrasTitulo)));
     }//GEN-LAST:event_btnColaActionPerformed
 
     private void btnPilasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPilasActionPerformed
         String letrasTitulo = txtcola.getText();
-        // Comprueba si la cola está vacía
-    if (colaLT != null && !colaLT.muestraElementos().isEmpty()) {
+        
+//        txttamañopila1.setText(Integer.toString(colapilaLT.hallarTamañoPilas1(letrasTitulo)));
+//        txttamañopila2.setText(Integer.toString(colapilaLT.hallarTamañoPilas2(letrasTitulo)));
+//        txttamañopila3.setText(Integer.toString(colapilaLT.hallarTamañoPilas3(letrasTitulo)));
+//        if (colapilaLT != null && !colapilaLT.muestraElementos().isEmpty()) {
         // Mueve la siguiente letra de la cola a la pila correspondiente
-        colaLT.seleccionarLetrasEnPilas(letrasTitulo);
-        txtpilavocales.setText(colaLT.muestraValoresPila1());
-        txtpilaconsonantes.setText(colaLT.muestraValoresPila2());
-        txtpilaotros.setText(colaLT.muestraValoresPila3());
+        colapilaLT.seleccionarLetrasEnPilas(letrasTitulo);
+        txtpilavocales.setText(colapilaLT.muestraValoresPila1());
+        txtpilaconsonantes.setText(colapilaLT.muestraValoresPila2());
+        txtpilaotros.setText(colapilaLT.muestraValoresPila3());
 
         // Actualiza el texto mostrado en txtcola para reflejar la letra eliminada
-        txtcola.setText(colaLT.muestraElementos());
-    }
+        txtcola.setText(colapilaLT.muestraElementos());
+       // }
     }//GEN-LAST:event_btnPilasActionPerformed
 
-    private void btnColaPilasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColaPilasActionPerformed
-//        //colas
-//        String titulo = txttitulo.getText();
-//        colaLT=new colaLetrasTitulo(titulo);
-//        colaLT.insertaTituloEnCola(titulo);
-//        txtcola.setText(colaLT.muestraElementos());
-//        //pilas
-//        String letrasTitulo = txtcola.getText();
-//        colaLT.seleccionarLetrasEnPilas(letrasTitulo);
-//        txtpilavocales.setText(colaLT.muestraValoresPila1());
-//        txtpilaconsonantes.setText(colaLT.muestraValoresPila2());
-//        txtpilaotros.setText(colaLT.muestraValoresPila3());
-    }//GEN-LAST:event_btnColaPilasActionPerformed
+    private void txtcolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcolaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcolaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,7 +320,6 @@ public class FormCyP extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCola;
-    private javax.swing.JButton btnColaPilas;
     private javax.swing.JButton btnPilas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -284,11 +327,18 @@ public class FormCyP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtcola;
     private javax.swing.JTextField txtpilaconsonantes;
     private javax.swing.JTextField txtpilaotros;
     private javax.swing.JTextField txtpilavocales;
+    private javax.swing.JTextField txttamañocola;
+    private javax.swing.JTextField txttamañopila1;
+    private javax.swing.JTextField txttamañopila2;
+    private javax.swing.JTextField txttamañopila3;
     public javax.swing.JTextField txttitulo;
     // End of variables declaration//GEN-END:variables
 }

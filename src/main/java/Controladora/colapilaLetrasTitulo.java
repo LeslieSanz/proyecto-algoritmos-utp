@@ -8,7 +8,7 @@ package Controladora;
  *
  * @author esther
  */
-public class colaLetrasTitulo {
+public class colapilaLetrasTitulo {
     private String cola[];
     private int first, last, tamaño, tamañoTitulo;
     
@@ -18,7 +18,7 @@ public class colaLetrasTitulo {
     
     private int j;
     
-    public colaLetrasTitulo(String letrasTitulo) {
+    public colapilaLetrasTitulo(String letrasTitulo) {
         tamaño= hallarTamañoCola(letrasTitulo);
         cola=new String[tamaño];
         colaVacia();
@@ -26,10 +26,6 @@ public class colaLetrasTitulo {
         tamaño1=hallarTamañoPilas1(letrasTitulo);
         tamaño2=hallarTamañoPilas2(letrasTitulo);
         tamaño3=hallarTamañoPilas3(letrasTitulo);
-         System.out.println(tamaño);
-        System.out.println(tamaño1);
-         System.out.println(tamaño2);
-          System.out.println(tamaño3);
        
         pila1 = new String[tamaño1];
         pila2 = new String[tamaño2];
@@ -78,8 +74,7 @@ public class colaLetrasTitulo {
           if(!letrasT[j].equals(" ")){
           last++;
           cola[last] = letrasT[j];
-//              System.out.println(last);
-         // letra=letrasT[j];
+
           if (first == -1) {
             first = 0;
           }
@@ -88,7 +83,7 @@ public class colaLetrasTitulo {
     }
     
     public String acceso(){
-        String letra = null;
+        String letra = "";
         if(first>-1){
             letra=cola[first];
         }
@@ -106,7 +101,6 @@ public class colaLetrasTitulo {
     }
     
     public int hallarTamañoPilas1(String letrasTitulo){
-//        String letras = colaLetras.muestraElementos();
         String[] letrasT= letrasTitulo.split("");
         int tamañocola = letrasT.length;
         
@@ -118,7 +112,6 @@ public class colaLetrasTitulo {
     }
     
     public int hallarTamañoPilas2(String letrasTitulo){
-//        String letras = colaLetras.muestraElementos();
         String[] letrasT= letrasTitulo.split("");
         int tamañocola = letrasT.length;
         
@@ -130,7 +123,6 @@ public class colaLetrasTitulo {
     }
     
     public int hallarTamañoPilas3(String letrasTitulo){
-//        String letras = colaLetras.muestraElementos();
         String[] letrasT= letrasTitulo.split("");
         int tamañocola = letrasT.length;
         
@@ -143,10 +135,6 @@ public class colaLetrasTitulo {
 
     
     public void seleccionarLetrasEnPilas(String letrasTitulo){
-//        String letras = colaLetras.muestraElementos();
-        
-//        String[] letrasT= letras.split("");
-//        int tamañocola = letrasT.length;
         
         if (first>-1) {
             if("AEIOUaeiouÁÉÍÓÚáéíóú".contains(cola[first]) && tope1<tamaño1-1){
@@ -168,33 +156,46 @@ public class colaLetrasTitulo {
                     colaVacia(); 
     }
     
+    public String eliminarElementoPila1(String vocales){
+        vocales="";
+        if(tope1>-1){
+            vocales=pila1[tope1];
+            tope1--;
+        }return vocales;          
+    }
     
-//    public void eliminaElemento(){
-//        int valor;
-//        if(first>-1){
-//            valor=cola[first];
-//            first++;
-//            if(first> last)
-//                colaVacia();
-//        }
-//    }
+    public String eliminarElementoPila2(String consonantes){
+        consonantes="";
+        if(tope2>-1){
+            consonantes=pila2[tope2];
+            tope2--;
+        }return consonantes;          
+    }
+    
+    public String eliminarElementoPila3(String otros){
+        otros="";
+        if(tope3>-1){
+            otros=pila3[tope3];
+            tope3--;
+        }return otros;          
+    }
     
     public String acceso1(){
-        String letra = null;
+        String letra = "";
         if(tope1>-1){
             letra=pila1[tope1];
         }return letra;
     }
     
     public String acceso2(){
-        String letra = null;
+        String letra = "";
         if(tope2>-1){
             letra=pila2[tope2];
         }return letra;
     }
     
     public String acceso3(){
-        String letra = null;
+        String letra = "";
         if(tope3>-1){
             letra=pila3[tope3];
         }return letra;
