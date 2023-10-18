@@ -10,7 +10,7 @@ public class Proceso {
     public Proceso(String nombre, int tiempo) {
         this.nombre = nombre;
         this.tiempo = tiempo;
-        this.estado = "pendiente";
+        
     }
 
     public String getNombre() {
