@@ -709,7 +709,6 @@ public class Form extends javax.swing.JFrame {
 
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
         row = tblDatos.getSelectedRow();
-        cyp.setVisible(false);
         cp.txtLibro.setText(tblDatos.getValueAt(row, 0).toString());
     }//GEN-LAST:event_tblDatosMouseClicked
 
