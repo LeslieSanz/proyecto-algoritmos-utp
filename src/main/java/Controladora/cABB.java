@@ -1,6 +1,7 @@
 package Controladora;
 
 import Clases.cLibro;
+import javax.swing.table.DefaultTableModel;
 
 public class cABB {
     private cLibro raiz,nuevo,p;
@@ -10,7 +11,7 @@ public class cABB {
     }
     
     public cLibro getRaiz() {
-    return raiz;
+        return raiz;
     }
     
     public void cargarDatos(){
@@ -21,7 +22,7 @@ public class cABB {
         ingresaLibro(new cLibro("Harry Potter y la piedra filosofal", 20, "J.K. Rowling", "Salamandra", "Fantasía", 1997, "Español"));
         ingresaLibro(new cLibro("Matar un ruiseñor", 3, "Harper Lee", "Harper Perennial Modern Classics", "Novela", 1960, "Inglés"));
         ingresaLibro(new cLibro("El Hobbit", 9, "J.R.R. Tolkien", "Houghton Mifflin Harcourt", "Fantasía", 1937, "Inglés"));
-    }
+   }
 
     
     public void ingresaLibro(cLibro libro){
@@ -92,6 +93,80 @@ public class cABB {
         return libro;
     }
     
+    //Metodo para ponerlo en una tabla, y mostrar en inOrden
+    public void mostrarTabla(DefaultTableModel modelo, int tipo) {
+        p=raiz;
+        switch(tipo){
+            case 1: mostrarTablaPreOrden(modelo,p);
+            break;
+            case 2: mostrarTablaInOrden(modelo,p);
+            break;
+            case 3: mostrarTablaPosOrden(modelo,p);
+            break;
+        }
+    }
+    
+    public void mostrarTablaPreOrden(DefaultTableModel modelo, cLibro p){
+        if (p != null) {
+            System.out.println("Procesando nodo: " + p.getTitulo());
+
+            Object[] rowData = {
+                p.getISBN(),
+                p.getTitulo(),
+                p.getAutor(),
+                p.getGenero(),
+                p.getEditorial(),
+                p.getIdioma(),
+                p.getAñoPub()
+            };
+            modelo.addRow(rowData);
+         
+             mostrarTablaPreOrden(modelo, p.getIzq());
+             mostrarTablaPreOrden(modelo, p.getDer());
+        }
+    }
+    
+    public void mostrarTablaInOrden(DefaultTableModel modelo, cLibro p){
+        if (p != null) {
+            mostrarTablaInOrden(modelo, p.getIzq());
+
+            System.out.println("Procesando nodo: " + p.getTitulo());
+            Object[] rowData = {
+                p.getISBN(),
+                p.getTitulo(),
+                p.getAutor(),
+                p.getGenero(),
+                p.getEditorial(),
+                p.getIdioma(),
+                p.getAñoPub()
+            };
+            modelo.addRow(rowData);
+            
+            mostrarTablaInOrden(modelo, p.getDer());
+        }
+    }
+    
+    public void mostrarTablaPosOrden(DefaultTableModel modelo, cLibro p){
+        if (p != null) {
+            mostrarTablaPosOrden(modelo, p.getIzq());
+            mostrarTablaPosOrden(modelo, p.getDer());
+            
+            System.out.println("Procesando nodo: " + p.getTitulo());
+            Object[] rowData = {
+                p.getISBN(),
+                p.getTitulo(),
+                p.getAutor(),
+                p.getGenero(),
+                p.getEditorial(),
+                p.getIdioma(),
+                p.getAñoPub()
+            };
+            modelo.addRow(rowData); 
+        }
+    }
+    
+    
+    
     public String muestraValores(int tipo){
         p=raiz; String cadena="";
         switch(tipo){
@@ -108,7 +183,7 @@ public class cABB {
     public String preOrden(cLibro p){
         String cadena = "";
         if(p!=null){ 
-            cadena = cadena + p.getISBN()+ " ";
+            cadena = cadena + p.mostrarDatos()+ "\n";
             cadena = cadena + preOrden(p.getIzq());
             cadena = cadena + preOrden(p.getDer());
         }
@@ -119,7 +194,7 @@ public class cABB {
         String cadena = "";
         if(p!=null){ 
             cadena = cadena + inOrden(p.getIzq());
-            cadena = cadena + p.getISBN()+ " ";
+            cadena = cadena + p.mostrarDatos()+ "\n";
             cadena = cadena + inOrden(p.getDer());
         }
         return cadena;
@@ -130,7 +205,7 @@ public class cABB {
         if(p!=null){ 
             cadena = cadena + inOrden(p.getIzq());
             cadena = cadena + inOrden(p.getDer());
-            cadena = cadena + p.getISBN()+ " ";
+            cadena = cadena + p.mostrarDatos()+ "\n";
         }
         return cadena;
     }

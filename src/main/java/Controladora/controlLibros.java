@@ -84,7 +84,7 @@ public class controlLibros {
     public String muestraLibro(){
         String cadena="";
         for (int i = 0; i <=ind; i++) {
-            cadena+=oLibros[i].mostrar()+"\n"; //obteniendo cada uno de los objetios
+            cadena+=oLibros[i].mostrarDatos()+"\n"; //obteniendo cada uno de los objetios
         }
         return cadena;
     }
@@ -292,7 +292,7 @@ public class controlLibros {
             for (int i = 0; i < n; i++) {
                 int indice = indices[i];
                 cLibro libro = oLibros[indice];
-                resultado = resultado+libro.mostrar() + "\n";
+                resultado = resultado+libro.mostrarDatos()+ "\n";
             }
             return resultado;
         } else 

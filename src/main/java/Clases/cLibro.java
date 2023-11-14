@@ -100,7 +100,7 @@ public class cLibro {
         this.idioma = idioma;
     }
     
-    public String mostrar(){
+    public String mostrarDatos(){
         return ISBN+" "+titulo+" "+autor+" "+editorial+" "+genero+" "+añoPub+" "+idioma;
     }
 
