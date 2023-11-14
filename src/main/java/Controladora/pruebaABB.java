@@ -6,7 +6,7 @@ public class pruebaABB {
         cABB oABB = new cABB();
         oABB.cargarDatos();
         System.out.println(oABB.muestraValores(2));
-        System.out.println(oABB.ingresaValorBusq(20));
+//        System.out.println(oABB.ingresaValorBusq(20));
     }
     
 }

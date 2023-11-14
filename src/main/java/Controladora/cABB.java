@@ -61,15 +61,16 @@ public class cABB {
         }
     }
     
-    public String ingresaValorBusq(int ISBN) {
+    public String ingresaValorBusq(int ISBN, DefaultTableModel modelo) {
         int n = 0; // Inicializamos el nivel
         cLibro libro = busquedaDirecta(raiz, ISBN, n);
 
         if (libro != null) {
-            return "Libro: " + libro.getTitulo() + " encontrado en el árbol";
+            mostrarResultadoTabla(libro,modelo);
+            return "Se encontró el libro \n" + libro.getTitulo();
         } else {
-            return "Libro con " + ISBN + " NO encontrado en el árbol";
-        }
+            return "Libro NO encontrado";
+        }  
     }
     
 
@@ -91,6 +92,19 @@ public class cABB {
             libro = null;
         }
         return libro;
+    }
+    
+    public void mostrarResultadoTabla(cLibro libro,DefaultTableModel modelo) {
+        Object[] rowData = {
+                libro.getISBN(),
+                libro.getTitulo(),
+                libro.getAutor(),
+                libro.getGenero(),
+                libro.getEditorial(),
+                libro.getIdioma(),
+                libro.getAñoPub()
+            };
+            modelo.addRow(rowData);
     }
     
     //Metodo para ponerlo en una tabla, y mostrar en inOrden
