@@ -82,6 +82,7 @@ public class FormABB extends javax.swing.JFrame {
             }
         });
 
+        cbxTipoRecorrido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cbxTipoRecorrido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo", "Pre Orden", "In Orden", "Post Orden" }));
 
         btnBuscar.setBackground(new java.awt.Color(0, 0, 0));
@@ -98,6 +99,15 @@ public class FormABB extends javax.swing.JFrame {
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        txtValorBusq.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        txtValorElim.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 51));
@@ -134,17 +144,16 @@ public class FormABB extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCargar, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(btnRecorrer, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnBuscar)
-                        .addComponent(btnEliminar)
-                        .addComponent(btnRecorrer, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnEliminar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtValorBusq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtValorElim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cbxTipoRecorrido, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cbxTipoRecorrido, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtValorBusq)
+                    .addComponent(txtValorElim))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -278,6 +287,14 @@ public class FormABB extends javax.swing.JFrame {
         txtValorBusq.setText(null);
         txtSalida.setText("RESULTADOS DE LA BÚSQUEDA: \n"+msj);
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        int valor = Integer.parseInt(txtValorElim.getText());
+        oABB.eliminaNodo(valor);
+        limpiarTabla(modelo);
+        oABB.mostrarTabla(modelo, 2);
+        txtValorElim.setText(null);
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     public void limpiarTabla(DefaultTableModel modelo) {
         int indMaxFilas = modelo.getRowCount()-1;
