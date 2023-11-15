@@ -81,29 +81,85 @@ public class controlLibros {
     }
     
     
-    public String muestraLibro(){
-        String cadena="";
-        for (int i = 0; i <=ind; i++) {
-            cadena+=oLibros[i].mostrar()+"\n"; //obteniendo cada uno de los objetios
+//    public String muestraLibro(){
+//        String cadena="";
+//        for (int i = 0; i <=ind; i++) {
+//            cadena+=oLibros[i].mostrar()+"\n"; //obteniendo cada uno de los objetios
+//        }
+//        return cadena;
+//    }
+ //////////////////////////////////////////////////// 
+    //Para un JTXTAREA
+      public String mostrar1(int posicion) {
+        if (posicion == oLibros.length - 1) {
+            return " ";
+        } else {
+            return oLibros[posicion].mostrar()+"\n"+mostrar1(posicion + 1)+"\n" ;
         }
-        return cadena;
+    }
+
+    public String  muestraF(DefaultTableModel modelo) {
+        return mostrar1(0); // Inicia la recursión desde la posición 0
     }
     
-    public void mostrarTabla(DefaultTableModel modelo){       
-        for(int i=0;  i <=ind; i++){
-            Object[] data = {
-                oLibros[i].getISBN(), 
-                oLibros[i].getTitulo(), 
-                oLibros[i].getAutor(), 
-                oLibros[i].getGenero(), 
-                oLibros[i].getEditorial(), 
-                oLibros[i].getIdioma(), 
-                oLibros[i].getAñoPub(), 
-                oLibros[i].getPrioridad(),
-                };
-            modelo.addRow(data);
+     private int suma(int indice) {
+        if (indice == oLibros.length || indice < 0) {
+            return 0; // Si el índice está fuera de los límites, retorna 0 para detener la suma.
+        } else {
+            return oLibros[indice].getAñoPub() + suma(indice + 1);
         }
     }
+
+    public int calcularSuma() {
+        return suma(0); // Inicia la recursión con el índice 0.
+    }
+    
+    
+    
+    ///////////////////////////////////////////// 
+    // PARA LA TABLA :D
+    public void mostrarTablaRecursivo(DefaultTableModel modelo, int posicion) {
+    if (posicion < oLibros.length) {
+        Object[] data = {
+            oLibros[posicion].getISBN(),
+            oLibros[posicion].getTitulo(),
+            oLibros[posicion].getAutor(),
+            oLibros[posicion].getGenero(),
+            oLibros[posicion].getEditorial(),
+            oLibros[posicion].getIdioma(),
+            oLibros[posicion].getAñoPub(),
+            oLibros[posicion].getPrioridad(),
+        };
+        modelo.addRow(data);
+        mostrarTablaRecursivo(modelo, posicion + 1);
+    }
+}
+
+    public void mostrarTablaR(DefaultTableModel modelo) {
+    // Limpia el modelo antes de agregar nuevas filas
+    modelo.setRowCount(0);
+    mostrarTablaRecursivo(modelo, 0);
+    }
+
+    
+    
+    /////////////////////////////////////////////
+    
+//    public void mostrarTabla(DefaultTableModel modelo){       
+//        for(int i=0;  i <=ind; i++){
+//            Object[] data = {
+//                oLibros[i].getISBN(), 
+//                oLibros[i].getTitulo(), 
+//                oLibros[i].getAutor(), 
+//                oLibros[i].getGenero(), 
+//                oLibros[i].getEditorial(), 
+//                oLibros[i].getIdioma(), 
+//                oLibros[i].getAñoPub(), 
+//                oLibros[i].getPrioridad(),
+//                };
+//            modelo.addRow(data);
+//        }
+//    }
     
     public void limpiarTabla(DefaultTableModel modelo) {
         int indMaxFilas = modelo.getRowCount()-1;
