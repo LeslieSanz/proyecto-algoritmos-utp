@@ -151,5 +151,8 @@ public class ListaEnlazadaDoble {
         p.getSgte().setAnte(p.getAnte());
     }
 }
+     
+     
+     //Muestra lista enlazada con recursividad
 
 }
