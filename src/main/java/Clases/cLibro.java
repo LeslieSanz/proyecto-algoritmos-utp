@@ -15,6 +15,10 @@ public class cLibro {
 
     //Para la cola con prioridad
     private int prioridad;
+    
+    //Para el arbol binario de busqueda
+    private cLibro izq;
+    private cLibro der;
 
     public cLibro(String titulo, int prioridad) {
         this.titulo = titulo;
@@ -40,11 +44,6 @@ public class cLibro {
     public cLibro(int ISBN) {
         this.ISBN = ISBN;
     }
-    
-    
-    
-    
-
     public String getTitulo() {
         return titulo;
     }
@@ -101,7 +100,7 @@ public class cLibro {
         this.idioma = idioma;
     }
     
-    public String mostrar(){
+    public String mostrarDatos(){
         return ISBN+" "+titulo+" "+autor+" "+editorial+" "+genero+" "+añoPub+" "+idioma;
     }
 
@@ -124,16 +123,31 @@ public class cLibro {
     public void setAnte(cLibro ante) {
         this.ante = ante;
     }
-    
-    
 
-
+    //Para la cola con prioridad
     public int getPrioridad() {
         return prioridad;
     }
 
     public void setPrioridad(int prioridad) {
         this.prioridad = prioridad;
+    }
+    
+    //Para el arbol binario de busqueda
+    public cLibro getIzq() {
+        return izq;
+    }
+
+    public void setIzq(cLibro izq) {
+        this.izq = izq;
+    }
+
+    public cLibro getDer() {
+        return der;
+    }
+
+    public void setDer(cLibro der) {
+        this.der = der;
     }
 
 }
