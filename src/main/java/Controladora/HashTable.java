@@ -30,13 +30,10 @@ public class HashTable {
     
     public void listarObjetos(){
         for (cLibro libro : hashtable.values()){
-            System.out.println(libro.mostrar());
+            System.out.println(libro.mostrarDatos());
         }
     }
-
-    
-
-    
+//Hola leslie
     
     
 }
