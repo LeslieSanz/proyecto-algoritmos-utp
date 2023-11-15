@@ -98,31 +98,7 @@ public class controlLibros {
 //        return cadena;
 //    }
  //////////////////////////////////////////////////// 
-    //Para un JTXTAREA
-      public String mostrar1(int posicion) {
-        if (posicion == oLibros.length - 1) {
-            return " ";
-        } else {
-            return oLibros[posicion].mostrarDatos()+"\n"+mostrar1(posicion + 1)+"\n" ;
 
-        }
-    }
-
-    public String  muestraF(DefaultTableModel modelo) {
-        return mostrar1(0); // Inicia la recursión desde la posición 0
-    }
-    
-     private int suma(int indice) {
-        if (indice == oLibros.length || indice < 0) {
-            return 0; // Si el índice está fuera de los límites, retorna 0 para detener la suma.
-        } else {
-            return oLibros[indice].getAñoPub() + suma(indice + 1);
-        }
-    }
-
-    public int calcularSuma() {
-        return suma(0); // Inicia la recursión con el índice 0.
-    }
     
     
     
@@ -150,8 +126,20 @@ public class controlLibros {
     modelo.setRowCount(0);
     mostrarTablaRecursivo(modelo, 0);
     }
+    
+   public  int suma(int indice) {
+    if (indice < oLibros.length && oLibros[indice] != null) {
+        return oLibros[indice].getAñoPub() + suma(indice + 1);
+    } else {
+        return 0; // Si el objeto es null o el índice está fuera de los límites, retorna 0 para detener la suma.
+    }
+}
 
     
+
+    public int calcularSuma() {
+        return suma(0); // Inicia la recursión con el índice 0.
+    }
     
     /////////////////////////////////////////////
     
