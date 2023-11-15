@@ -33,7 +33,7 @@ public class HashTable {
             System.out.println(libro.mostrarDatos());
         }
     }
-//Hola leslie, como estas?
+//Hola leslie, como estas? Te gané B)
     
     
 }
