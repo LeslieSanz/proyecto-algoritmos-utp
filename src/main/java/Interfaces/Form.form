@@ -149,11 +149,13 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="BtnMostrarPor" min="-2" pref="189" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="btnOrdenarAutor" min="-2" pref="155" max="-2" attributes="0"/>
+                                  <Component id="BtnMostrarPor" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" pref="183" max="-2" attributes="0"/>
+                                  <Component id="btnOrdenarAutor" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButton2" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="btnHash" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane2" min="-2" pref="610" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
@@ -260,6 +262,7 @@
                               <Component id="BtnMostrarPor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnOrdenarAutor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnHash" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="220" max="-2" attributes="0"/>
@@ -713,6 +716,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnHash">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Hash"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHashActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

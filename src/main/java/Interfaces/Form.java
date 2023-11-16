@@ -30,6 +30,7 @@ public class Form extends javax.swing.JFrame {
     DefaultTableModel modelo1 = new DefaultTableModel();
     FormColaPrioridad cp;
     FormCyP cyp;
+     FormHash fh;
     
     private void establecerColumnas(){
         modelo.addColumn("ISBN");
@@ -106,6 +107,7 @@ public class Form extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
         btnColaPrioridad = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
+        btnHash = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -366,6 +368,13 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        btnHash.setText("Hash");
+        btnHash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHashActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -450,11 +459,13 @@ public class Form extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(BtnMostrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(btnOrdenarAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BtnMostrarPor)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnOrdenarAutor)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(btnHash))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -533,7 +544,8 @@ public class Form extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BtnMostrarPor)
                             .addComponent(btnOrdenarAutor)
-                            .addComponent(jButton2))
+                            .addComponent(jButton2)
+                            .addComponent(btnHash))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -589,6 +601,7 @@ public class Form extends javax.swing.JFrame {
     oControlLib = new controlLibros(n);
     
     cp = new FormColaPrioridad(oControlLib);
+    fh = new FormHash(oControlLib);
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
@@ -724,6 +737,7 @@ public class Form extends javax.swing.JFrame {
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
         row = tblDatos.getSelectedRow();
         cp.txtLibro.setText(tblDatos.getValueAt(row, 0).toString());
+        fh.txtISBN.setText(tblDatos.getValueAt(row, 0).toString());
     }//GEN-LAST:event_tblDatosMouseClicked
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
@@ -777,6 +791,11 @@ public class Form extends javax.swing.JFrame {
     
     jTextArea1.setText(String.valueOf(suma));        // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void btnHashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHashActionPerformed
+      
+       fh.setVisible(true);
+    }//GEN-LAST:event_btnHashActionPerformed
     
     
     /**
@@ -826,6 +845,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton btnColaPrioridad;
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnHash;
     private javax.swing.JButton btnInsertar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnMostrarTabla;
