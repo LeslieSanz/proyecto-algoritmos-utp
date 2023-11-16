@@ -9,8 +9,7 @@ public class Proceso {
 
     public Proceso(String nombre, int tiempo) {
         this.nombre = nombre;
-        this.tiempo = tiempo;
-        
+        this.tiempo = tiempo;    
     }
 
     public String getNombre() {
