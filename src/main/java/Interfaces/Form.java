@@ -653,7 +653,7 @@ public class Form extends javax.swing.JFrame {
     private void btnOrdenarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarAutorActionPerformed
     oControlLib.ordInsercionParaString();
     oControlLib.limpiarTabla(modelo);
-    oControlLib.mostrarTablaR(modelo);
+    oControlLib.mostrarTabla(modelo);
     
     //String cadena=oControlLib.muestraLibro();
     //jTextArea1.setText(cadena);
@@ -668,7 +668,7 @@ public class Form extends javax.swing.JFrame {
     private void BtnMostrarPorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarPorActionPerformed
         oControlLib.ordenarPorAtributoNumerico();
         oControlLib.limpiarTabla(modelo);
-        oControlLib.mostrarTablaR(modelo);
+        oControlLib.mostrarTabla(modelo);
         
         
         
@@ -686,7 +686,7 @@ public class Form extends javax.swing.JFrame {
     private void btnMostrarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTablaActionPerformed
     //mostrar en la tabla (array)
     oControlLib.limpiarTabla(modelo);
-    oControlLib.mostrarTablaR(modelo);
+    oControlLib.mostrarTabla(modelo);
 
     jTextArea1.setText("");
     
@@ -699,7 +699,7 @@ public class Form extends javax.swing.JFrame {
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         //cargar datos del arreglo
     oControlLib.cargarDatos();
-    oControlLib.mostrarTablaR(modelo);
+    oControlLib.mostrarTabla(modelo);
     
     
         //cargar datos de la lista doblemente enlazada
@@ -717,7 +717,7 @@ public class Form extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     oControlLib.ordenarPorDosAtributos();
     oControlLib.limpiarTabla(modelo);
-    oControlLib.mostrarTablaR(modelo);// TODO add your handling code here:
+    oControlLib.mostrarTabla(modelo);// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void cbxIdiomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxIdiomaActionPerformed
@@ -762,7 +762,7 @@ public class Form extends javax.swing.JFrame {
         }
         
         oControlLib.limpiarTabla(modelo);
-        oControlLib.mostrarTablaR(modelo);
+        oControlLib.mostrarTabla(modelo);
         pnlPrioridad.setVisible(false);
         
     }//GEN-LAST:event_btnGuardarActionPerformed
@@ -787,7 +787,7 @@ public class Form extends javax.swing.JFrame {
     }//GEN-LAST:event_tblDatosKeyPressed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-    int suma=oControlLib.calcularSuma();
+    int suma=r.calcularSuma();
     
     jTextArea1.setText(String.valueOf(suma));        // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
