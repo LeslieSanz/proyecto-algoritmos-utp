@@ -49,6 +49,8 @@ public class cRecursividad {
 
     }
     
+    //1
+    
   
   public void mostrarTablaRecursivo(DefaultTableModel modelo, int posicion) {
     if (posicion < oLibros.length && oLibros[posicion] != null) {
@@ -88,37 +90,8 @@ public class cRecursividad {
     
     
     
-    public cLibro  BuscarRecursivamente(DefaultTableModel modelo, int isbn, int posicion) {
-    if (posicion < oLibros.length) {
-        if (isbn != oLibros[posicion].getISBN()) {
-            return BuscarRecursivamente(modelo, isbn, posicion + 1);
-        } else {
-            return oLibros[posicion];
-        }
-    } else {
-        return null;
-    }
     
-}
-    
-    public void mostrarBR(DefaultTableModel modelo, int isbn) {
-        modelo.setRowCount(0);
-        cLibro libroEncontrado = BuscarRecursivamente(modelo, isbn, 0);
-
-        if (libroEncontrado != null) {
-            Object[] data = {
-                libroEncontrado.getISBN(),
-                libroEncontrado.getTitulo(),
-                libroEncontrado.getAutor(),
-                libroEncontrado.getGenero(),
-                libroEncontrado.getEditorial(),
-                libroEncontrado.getIdioma(),
-                libroEncontrado.getAñoPub(),
-            };
-            modelo.addRow(data);
-        }
-    }
-
+    //2
 
 
         private cLibro[] buscarRecursivamente2(String genero, String idioma, int posicion, cLibro[] resultados, int index) {
@@ -178,6 +151,42 @@ public class cRecursividad {
 
 
 
+        //3
+        
+    public cLibro  BuscarRecursivamente(DefaultTableModel modelo, int isbn, int posicion) {
+    if (posicion < oLibros.length) {
+        if (isbn != oLibros[posicion].getISBN()) {
+            return BuscarRecursivamente(modelo, isbn, posicion + 1);
+        } else {
+            return oLibros[posicion];
+        }
+    } else {
+        return null;
+    }
     
+}
+    
+    public void mostrarBR(DefaultTableModel modelo, int isbn) {
+        modelo.setRowCount(0);
+        cLibro libroEncontrado = BuscarRecursivamente(modelo, isbn, 0);
+
+        if (libroEncontrado != null) {
+            Object[] data = {
+                libroEncontrado.getISBN(),
+                libroEncontrado.getTitulo(),
+                libroEncontrado.getAutor(),
+                libroEncontrado.getGenero(),
+                libroEncontrado.getEditorial(),
+                libroEncontrado.getIdioma(),
+                libroEncontrado.getAñoPub(),
+            };
+            modelo.addRow(data);
+        }
+    }
+    
+    public int suma3(DefaultTableModel modelo, int isbn) {
+        cLibro libroEncontrado = BuscarRecursivamente(modelo, isbn, 0);
+        return libroEncontrado.getISBN()+libroEncontrado.getAñoPub();
+    }
 
 }
