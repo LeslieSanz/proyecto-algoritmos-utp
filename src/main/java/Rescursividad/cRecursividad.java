@@ -67,18 +67,40 @@ public class cRecursividad {
         mostrarTablaRecursivo(modelo, posicion + 1);
     } 
         }
+  
+  
+  
 
     public void mostrarTablaR(DefaultTableModel modelo) {
-    // Limpia el modelo antes de agregar nuevas filas
     modelo.setRowCount(0);
+    modelo.setColumnIdentifiers(new Object[]{"ISBN", "Titulo", "Autor", "Genero", "Editorial", "Idioma", "Año de Publicacion"});
     mostrarTablaRecursivo(modelo, 0);
     }
     
+    public void mostrarTablaRecursivo2(DefaultTableModel modelo, int posicion) {
+    if (posicion < oLibros.length && oLibros[posicion] != null) {
+        Object[] data = {
+            oLibros[posicion].getISBN(),
+            oLibros[posicion].getGenero(),
+            oLibros[posicion].getIdioma(),
+        
+        };
+        modelo.addRow(data);
+        mostrarTablaRecursivo2(modelo, posicion + 1);
+    } 
+        }
+    
+    public void mostrarTablaR2(DefaultTableModel modelo) {
+    /// Limpia el modelo antes de agregar nuevas filas
+    modelo.setRowCount(0);
+    modelo.setColumnIdentifiers(new Object[]{"ISBN", "Genero", "Idioma"});
+    mostrarTablaRecursivo2(modelo, 0);
+    }
     
     
    public  int suma(int indice) {
     if (indice < oLibros.length && oLibros[indice] != null) {
-        return oLibros[indice].getAñoPub() + suma(indice + 1);
+        return oLibros[indice].getAñoPub() +oLibros[indice].getISBN()+ suma(indice + 1);
     } else {
         return 0; // Si el objeto es null o el índice está fuera de los límites, retorna 0 para detener la suma.
     }
@@ -112,18 +134,15 @@ public class cRecursividad {
         resultados = buscarRecursivamente2(genero, idioma, 0, resultados, 0);
 
         modelo.setRowCount(0);
+        modelo.setColumnIdentifiers(new Object[]{"ISBN", "Genero", "Idioma"});
 
         // Muestra los resultados en la tabla
         for (cLibro libro : resultados) {
             if (libro != null) {
                 Object[] data = {
                     libro.getISBN(),
-                    libro.getTitulo(),
-                    libro.getAutor(),
                     libro.getGenero(),
-                    libro.getEditorial(),
                     libro.getIdioma(),
-                    libro.getAñoPub(),
                 };
                 modelo.addRow(data);
             }
@@ -137,9 +156,8 @@ public class cRecursividad {
         resultados = buscarRecursivamente2(genero, idioma, 0, resultados, 0);
 
         if (indice < resultados.length && resultados[indice] != null) {
-            int a = resultados[indice].getAñoPub();
-            int b = resultados[indice].getISBN();
-            return a + b + suma2(genero, idioma, indice + 1);
+            return resultados[indice].getISBN()+ suma2(genero, idioma, indice + 1);
+             
         } else {
             return 0; // Si el objeto es null o el índice está fuera de los límites, retorna 0 para detener la suma.
         }
