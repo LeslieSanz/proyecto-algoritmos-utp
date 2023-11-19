@@ -368,6 +368,8 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        btnHash.setBackground(new java.awt.Color(204, 204, 255));
+        btnHash.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnHash.setText("Hash");
         btnHash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -464,7 +466,7 @@ public class Form extends javax.swing.JFrame {
                                 .addComponent(btnOrdenarAutor)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnHash))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
