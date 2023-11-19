@@ -20,7 +20,6 @@ public class Hash {
     public Hash(int n){
         arreglo=new cLibro[n];
         m=arreglo.length;
-        System.out.println(m);
     }
     
     public void plegamiento(cLibro libro,  JTable tabla){
@@ -29,9 +28,8 @@ public class Hash {
         n1=valor/1000;
         n2 = valor%1000;  
         indice = (n1+n2) % m;
-        if(arreglo[indice] != null){
+        if(arreglo[indice] != null && arreglo[indice].getISBN() != valor){
             indice=colisionVisitaLineal(indice);}
-        System.out.println(indice);
         arreglo[indice] = libro;
         actualizarTabla(tabla);
     }
@@ -48,21 +46,26 @@ public class Hash {
     
     public int buscarClave(int valor) {
         int indice, n1, n2, contador=0;
-        n1 = valor / 100;
-        n2 = valor % 100;
+        n1 = valor / 1000;
+        n2 = valor % 1000;
         indice = (n1 + n2) % m;
         
-        if (arreglo[indice].getISBN() == valor) {
+        if (arreglo[indice] != null && arreglo[indice].getISBN() == valor) {
             return indice; // Si el valor está en el índice calculado, retorna el índice
         } else {
             int j = 0; 
-            while(arreglo[(indice + j) % m].getISBN() != valor){
-            j++;
-            contador++;
-            if(contador>m)
+            if(arreglo[(indice+j)%m]!=null){
+                while(arreglo[(indice + j) % m].getISBN() != valor){
+                    j++;
+                    contador++;
+                       if(contador>m){
+                           return -1;
+                       }
+                }
+            }else{
                 return -1;
             }
-            return (indice+j)%m;
+            return (indice+j)%m; 
         }
     }
     
@@ -94,7 +97,6 @@ public class Hash {
                 arreglo[i].getIdioma(),
                 arreglo[i].getAñoPub()
             };
-
             int rowIndex = -1; // Variable para guardar el índice de la fila
             for (int j = 0; j < modelo.getRowCount(); j++) {
                 if ((int) modelo.getValueAt(j, 0) == i) {
@@ -102,7 +104,6 @@ public class Hash {
                     break;
                 }
             }
-
             if (rowIndex != -1) {
                 for (int col = 1; col < modelo.getColumnCount(); col++) {
                     modelo.setValueAt(rowData[col], rowIndex, col);
@@ -112,9 +113,6 @@ public class Hash {
     }
 }
 
-
-
-    
     public void limpiarTabla(DefaultTableModel modelo) {
         int indMaxFilas = modelo.getRowCount()-1;
         for (int i = indMaxFilas; i >= 0; i--) {
