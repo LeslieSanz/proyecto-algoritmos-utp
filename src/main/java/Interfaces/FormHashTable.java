@@ -18,6 +18,7 @@ public class FormHashTable extends javax.swing.JFrame {
         this.oControlLib = oControlLib;
         initComponents();
         establecerColumnas1();
+        setAlwaysOnTop(true);
         
         
         
@@ -348,20 +349,24 @@ public class FormHashTable extends javax.swing.JFrame {
     }//GEN-LAST:event_TablaLibrosMouseClicked
     
     private void actualizarTabla() {
-        // Obtener todos los libros de la Hashtable
+    // Obtener todos los libros de la Hashtable
     HashMap<Integer, cLibro> todosLosLibros = hashTable.obtenerTodos();
 
     // Limpiar la tabla
     DefaultTableModel modelo = (DefaultTableModel) TablaLibros.getModel();
     modelo.setRowCount(0);
 
+    // Inicializar un índice para la secuencia numerada
+    int indiceNumerado = 0;
+
     // Llenar la tabla con los datos de la Hashtable
-    for (int ISBN : todosLosLibros.keySet()) {
-        cLibro libro = todosLosLibros.get(ISBN);
+    for (int indice : todosLosLibros.keySet()) {
+        cLibro libro = todosLosLibros.get(indice);
 
         // Crear un array con los datos del libro
         Object[] rowData = {
-            ISBN,
+            indiceNumerado++, // Utilizar la secuencia numerada y luego incrementar el índice
+            libro.getISBN(),
             libro.getTitulo(),
             libro.getAutor(),
             libro.getGenero(),
@@ -373,7 +378,8 @@ public class FormHashTable extends javax.swing.JFrame {
         // Añadir la fila al modelo de la tabla
         modelo.addRow(rowData);
     }
-    }
+}
+    
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
