@@ -36,14 +36,23 @@ public class cLibro {
         this.prioridad=0;
     }
 
+    public cLibro(String titulo, int ISBN, int añoPub) {
+        this.titulo = titulo;
+        this.ISBN = ISBN;
+        this.añoPub = añoPub;
+    }
+
+     public cLibro(int ISBN) {
+        this.ISBN = ISBN;
+    }
+    
+    
     public cLibro( int ISBN, String titulo) {
         this.titulo = titulo;
         this.ISBN = ISBN;
     }
 
-    public cLibro(int ISBN) {
-        this.ISBN = ISBN;
-    }
+    
     public String getTitulo() {
         return titulo;
     }

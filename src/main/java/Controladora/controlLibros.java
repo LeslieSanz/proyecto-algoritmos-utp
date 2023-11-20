@@ -81,6 +81,9 @@ public class controlLibros {
     }
     
     
+
+ 
+
     public String muestraLibro(){
         String cadena="";
         for (int i = 0; i <=ind; i++) {
@@ -88,6 +91,12 @@ public class controlLibros {
         }
         return cadena;
     }
+ //////////////////////////////////////////////////// 
+
+
+
+    
+    /////////////////////////////////////////////
     
     public void mostrarTabla(DefaultTableModel modelo){       
         for(int i=0;  i <=ind; i++){
