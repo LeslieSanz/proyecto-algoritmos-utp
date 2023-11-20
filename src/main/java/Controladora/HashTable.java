@@ -1,23 +1,24 @@
 package Controladora;
 
 import java.util.HashMap;
+import Clases.cLibro;
 
 public class HashTable {
-    private HashMap<String, String> hashtable;
+    private HashMap<Integer, cLibro> hashtable;
 
-    public HashTable() {
-        hashtable = new HashMap<>();
+    public HashTable(int n) {
+        hashtable = new HashMap<>(n);
     }
 
-    public void insertarLibro(String ISBN, String titulo) {
-        hashtable.put(ISBN, titulo);
+    public void insertarLibro(int ISBN, cLibro libro) {
+        hashtable.put(ISBN, libro);
     }
 
-    public String recuperarTitulo(String ISBN) {
-        return hashtable.get(ISBN);
-    }
-
-    public HashMap<String, String> obtenerTodos() {
+    public HashMap<Integer, cLibro> obtenerTodos() {
         return hashtable;
     }
+    //    public String recuperarTitulo(String ISBN, cLibro libro) {
+//        return hashtable.get(ISBN);
+//    }
+//
 }

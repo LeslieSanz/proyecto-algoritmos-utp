@@ -31,6 +31,7 @@ public class Form extends javax.swing.JFrame {
     FormColaPrioridad cp;
     FormCyP cyp;
      FormHash fh;
+     FormHashTable fht = new FormHashTable(oControlLib);
     
     private void establecerColumnas(){
         modelo.addColumn("ISBN");
@@ -108,6 +109,7 @@ public class Form extends javax.swing.JFrame {
         btnColaPrioridad = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
         btnHash = new javax.swing.JButton();
+        btnHashTable = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -377,6 +379,15 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        btnHashTable.setBackground(new java.awt.Color(204, 204, 255));
+        btnHashTable.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHashTable.setText("HashTable");
+        btnHashTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHashTableActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -467,6 +478,8 @@ public class Form extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnHashTable, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnHash))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -547,7 +560,8 @@ public class Form extends javax.swing.JFrame {
                             .addComponent(BtnMostrarPor)
                             .addComponent(btnOrdenarAutor)
                             .addComponent(jButton2)
-                            .addComponent(btnHash))
+                            .addComponent(btnHash)
+                            .addComponent(btnHashTable))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -740,6 +754,7 @@ public class Form extends javax.swing.JFrame {
         row = tblDatos.getSelectedRow();
         cp.txtLibro.setText(tblDatos.getValueAt(row, 0).toString());
         fh.txtISBN.setText(tblDatos.getValueAt(row, 0).toString());
+        fht.txtIsbn1.setText(tblDatos.getValueAt(row, 0).toString());
     }//GEN-LAST:event_tblDatosMouseClicked
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
@@ -798,6 +813,10 @@ public class Form extends javax.swing.JFrame {
       
        fh.setVisible(true);
     }//GEN-LAST:event_btnHashActionPerformed
+
+    private void btnHashTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHashTableActionPerformed
+       fht.setVisible(true);
+    }//GEN-LAST:event_btnHashTableActionPerformed
     
     
     /**
@@ -848,6 +867,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnHash;
+    private javax.swing.JButton btnHashTable;
     private javax.swing.JButton btnInsertar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnMostrarTabla;
