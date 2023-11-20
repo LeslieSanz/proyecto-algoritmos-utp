@@ -30,8 +30,8 @@ public class Form extends javax.swing.JFrame {
     DefaultTableModel modelo1 = new DefaultTableModel();
     FormColaPrioridad cp;
     FormCyP cyp;
-     FormHash fh;
-     FormHashTable fht = new FormHashTable(oControlLib);
+    FormHash fh;
+    FormHashTable fht;
     
     private void establecerColumnas(){
         modelo.addColumn("ISBN");
@@ -618,6 +618,7 @@ public class Form extends javax.swing.JFrame {
     
     cp = new FormColaPrioridad(oControlLib);
     fh = new FormHash(oControlLib);
+    fht = new FormHashTable(oControlLib);
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed

@@ -9,14 +9,16 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class FormHashTable extends javax.swing.JFrame {
-    HashTable ht;
+//    HashTable ht;
     private HashTable hashTable;
-    private static controlLibros oControlLibro ;
+    cLibro oLibro;
+    private static controlLibros oControlLib ;
     
-    public FormHashTable(controlLibros oControlLibro) {
+    public FormHashTable(controlLibros oControlLib) {
+        this.oControlLib = oControlLib;
         initComponents();
         establecerColumnas1();
-        this.oControlLibro = oControlLibro;
+        
         
         
         
@@ -247,15 +249,23 @@ public class FormHashTable extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIsertarActionPerformed
-        int ISBN = Integer.parseInt(txtIsbn1.getText());
-        cLibro oLibro = oControlLibro.BuscarUno(ISBN);
-        // Verificar que ambos campos estén completos
-        if (ISBN != 0) {
-            // Insertar en la Hashtable
-            hashTable.insertarLibro(ISBN, oLibro);
+         int ISBN = Integer.parseInt(txtIsbn1.getText());
 
-            // Actualizar la tabla con los datos de la Hashtable
-            actualizarTabla();
+        // Verificar que oControlLib no sea null
+        if (oControlLib != null) {
+            oLibro = oControlLib.BuscarUno(ISBN);
+
+            // Verificar que ambos campos estén completos
+            if (ISBN != 0) {
+                // Insertar en la Hashtable
+                hashTable.insertarLibro(ISBN, oLibro);
+
+                // Actualizar la tabla con los datos de la Hashtable
+                actualizarTabla();
+            }
+        } else {
+        // Manejar el caso cuando oControlLib es null
+        System.out.println("oControlLib es null");
         }
     }//GEN-LAST:event_btnIsertarActionPerformed
 
@@ -320,8 +330,8 @@ public class FormHashTable extends javax.swing.JFrame {
         model.setRowCount(0);
         
         int tamaño = Integer.parseInt(txtTamano.getText());
-        ht = new HashTable(tamaño);
-        oControlLibro = new controlLibros(tamaño);
+        hashTable = new HashTable(tamaño);
+        
 
         // Agregar los índices a la tabla
         for (int i = 0; i < tamaño; i++) {
@@ -395,7 +405,7 @@ public class FormHashTable extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormHashTable(oControlLibro).setVisible(true);
+                new FormHashTable(oControlLib).setVisible(true);
             }
         });
     }
