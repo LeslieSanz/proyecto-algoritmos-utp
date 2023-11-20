@@ -74,6 +74,7 @@ public class cRecursividad {
     public void mostrarTablaR(DefaultTableModel modelo) {
     modelo.setRowCount(0);
     modelo.setColumnIdentifiers(new Object[]{"ISBN", "Titulo", "Autor", "Genero", "Editorial", "Idioma", "Año de Publicacion"});
+    //Esto es 
     mostrarTablaRecursivo(modelo, 0);
     }
     
