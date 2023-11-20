@@ -11,11 +11,13 @@ import javax.swing.table.DefaultTableModel;
 public class FormHashTable extends javax.swing.JFrame {
     HashTable ht;
     private HashTable hashTable;
-    private static controlLibros oControlLib ;
+    private static controlLibros oControlLibro ;
     
-    public FormHashTable(controlLibros oControlLib1) {
+    public FormHashTable(controlLibros oControlLibro) {
         initComponents();
         establecerColumnas1();
+        this.oControlLibro = oControlLibro;
+        
         
         
     }
@@ -246,7 +248,7 @@ public class FormHashTable extends javax.swing.JFrame {
 
     private void btnIsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIsertarActionPerformed
         int ISBN = Integer.parseInt(txtIsbn1.getText());
-        cLibro oLibro = oControlLib.BuscarUno(ISBN);
+        cLibro oLibro = oControlLibro.BuscarUno(ISBN);
         // Verificar que ambos campos estén completos
         if (ISBN != 0) {
             // Insertar en la Hashtable
@@ -319,7 +321,7 @@ public class FormHashTable extends javax.swing.JFrame {
         
         int tamaño = Integer.parseInt(txtTamano.getText());
         ht = new HashTable(tamaño);
-        oControlLib = new controlLibros(tamaño);
+        oControlLibro = new controlLibros(tamaño);
 
         // Agregar los índices a la tabla
         for (int i = 0; i < tamaño; i++) {
@@ -393,7 +395,7 @@ public class FormHashTable extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormHashTable(oControlLib).setVisible(true);
+                new FormHashTable(oControlLibro).setVisible(true);
             }
         });
     }
