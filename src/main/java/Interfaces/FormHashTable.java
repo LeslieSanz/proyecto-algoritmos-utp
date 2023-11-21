@@ -57,6 +57,7 @@ public class FormHashTable extends javax.swing.JFrame {
         txtTamano = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaLibros = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
@@ -162,49 +163,59 @@ public class FormHashTable extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TablaLibros);
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("TAMAÑO");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(179, 179, 179))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(txtISBN2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(26, 26, 26)
+                                    .addComponent(btnRecuperar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(62, 62, 62)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(179, 179, 179))
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtISBN2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnRecuperar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtTamano, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIsbn1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnIsertar, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(55, 55, 55)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTamano, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(txtIsbn1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnIsertar, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 69, Short.MAX_VALUE))
+                        .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)))
+                .addGap(66, 66, 66))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -218,32 +229,28 @@ public class FormHashTable extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTamano, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39)
+                        .addGap(33, 33, 33)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtIsbn1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnIsertar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -271,48 +278,71 @@ public class FormHashTable extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIsertarActionPerformed
 
     private void btnRecuperarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecuperarActionPerformed
-                                           
-//    // Obtener el ISBN desde el txtISBN2
-//    String ISBN = txtISBN2.getText();
-//
-//    // Verificar que el campo ISBN no esté vacío
-//    if (!ISBN.isEmpty()) {
-//        // Recuperar el título asociado al ISBN
-//        String tituloRecuperado = hashTable.recuperarTitulo(ISBN);
-//
-//        // Verificar si se encontró el título
-//        if (tituloRecuperado != null) {
-//            // Insertar el libro recuperado en la tabla
-//            DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
-//            model.addRow(new Object[]{ISBN, tituloRecuperado});
-//
-//            // Limpiar el campo txtISBN2
-//            txtISBN2.setText("");
-//        } else {
-//            // Mostrar un mensaje si no se encontró el título
-//            JOptionPane.showMessageDialog(this, "No se encontró un libro con ese ISBN", "Error", JOptionPane.ERROR_MESSAGE);
-//        }
-//    } else {
-//        // Mostrar un mensaje si el campo ISBN está vacío
-//        JOptionPane.showMessageDialog(this, "Ingrese un ISBN antes de recuperar el título", "Error", JOptionPane.ERROR_MESSAGE);
-//    
-//}
+        // Obtener el ISBN desde el txtISBN2
+    int ISBN = Integer.parseInt(txtISBN2.getText());
+
+    // Verificar que el campo ISBN no esté vacío
+    if (ISBN != 0) {
+        // Recuperar el libro asociado al ISBN
+        cLibro libroRecuperado = hashTable.recuperarLibro(ISBN);
+
+        // Verificar si se encontró el libro
+        if (libroRecuperado != null) {
+            // Limpiar la tabla
+            DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
+            model.setRowCount(0);
+
+            // Añadir el libro recuperado a la tabla
+            Object[] rowData = {
+                1,
+                libroRecuperado.getISBN(),
+                libroRecuperado.getTitulo(),
+                libroRecuperado.getAutor(),
+                libroRecuperado.getGenero(),
+                libroRecuperado.getEditorial(),
+                libroRecuperado.getIdioma(),
+                libroRecuperado.getAñoPub()
+            };
+
+            model.addRow(rowData);
+        } else {
+            // Mostrar un mensaje si no se encontró el libro
+            JOptionPane.showMessageDialog(this, "No se encontró un libro con ese ISBN", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // Mostrar un mensaje si el campo ISBN está vacío
+        JOptionPane.showMessageDialog(this, "Ingrese un ISBN antes de recuperar el libro", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
 
     }//GEN-LAST:event_btnRecuperarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-//        // Obtener todos los libros de la Hashtable
-//    HashMap<String, String> todosLosLibros = hashTable.obtenerTodos();
-//
-//    // Limpiar la tabla
-//    DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
-//    model.setRowCount(0);
-//
-//    // Llenar la tabla con los datos de la Hashtable
-//    for (String ISBN : todosLosLibros.keySet()) {
-//        String titulo = todosLosLibros.get(ISBN);
-//        model.addRow(new Object[]{ISBN, titulo});
-//    }
+        // Obtener todos los libros de la Hashtable
+    HashMap<Integer, cLibro> todosLosLibros = hashTable.obtenerTodos();
+
+    // Limpiar la tabla
+    DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
+    model.setRowCount(0);
+
+    // Llenar la tabla con los datos de la Hashtable
+    int indice = 0;
+    for (cLibro libro : todosLosLibros.values()) {
+        // Crear un array con los datos del libro
+        Object[] rowData = {
+            indice++, // Utilizar la secuencia numerada y luego incrementar el índice
+            libro.getISBN(),
+            libro.getTitulo(),
+            libro.getAutor(),
+            libro.getGenero(),
+            libro.getEditorial(),
+            libro.getIdioma(),
+            libro.getAñoPub()
+        };
+
+        // Añadir la fila al modelo de la tabla
+        model.addRow(rowData);
+    }
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
@@ -321,8 +351,8 @@ public class FormHashTable extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
          model.setRowCount(0);
          txtIsbn1.setText("");
-         txtISBN2.setText("");
-
+         txtISBN2.setText("");  
+         txtTamano.setText("");
 
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
@@ -334,10 +364,10 @@ public class FormHashTable extends javax.swing.JFrame {
         hashTable = new HashTable(tamaño);
         
 
-        // Agregar los índices a la tabla
-        for (int i = 0; i < tamaño; i++) {
-            modelo1.addRow(new Object[]{i, "", "", "", "", "", "", ""});
-        }
+//        // Agregar los índices a la tabla
+//        for (int i = 0; i < tamaño; i++) {
+//            modelo1.addRow(new Object[]{i, "", "", "", "", "", "", ""});
+//        }
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void txtTamanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTamanoActionPerformed
@@ -425,6 +455,7 @@ public class FormHashTable extends javax.swing.JFrame {
     private javax.swing.JButton btnRecuperar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

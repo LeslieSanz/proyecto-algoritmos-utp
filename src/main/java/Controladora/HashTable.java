@@ -17,8 +17,10 @@ public class HashTable {
     public HashMap<Integer, cLibro> obtenerTodos() {
         return hashtable;
     }
-    //    public String recuperarTitulo(String ISBN, cLibro libro) {
-//        return hashtable.get(ISBN);
-//    }
-//
+    public cLibro recuperarLibro(int ISBN) {
+    return hashtable.get(ISBN);
+
+}
+
+
 }
