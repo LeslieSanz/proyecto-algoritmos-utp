@@ -30,8 +30,8 @@ public class Form extends javax.swing.JFrame {
     DefaultTableModel modelo1 = new DefaultTableModel();
     FormColaPrioridad cp;
     FormCyP cyp;
-     FormHash fh;
-     FormHashTable fht = new FormHashTable(oControlLib);
+    FormHash fh;
+    FormHashTable fht;
     
     private void establecerColumnas(){
         modelo.addColumn("ISBN");
@@ -478,7 +478,7 @@ public class Form extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnHashTable, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnHashTable, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnHash))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -618,6 +618,7 @@ public class Form extends javax.swing.JFrame {
     
     cp = new FormColaPrioridad(oControlLib);
     fh = new FormHash(oControlLib);
+    fht = new FormHashTable(oControlLib);
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
