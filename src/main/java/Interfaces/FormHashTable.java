@@ -4,7 +4,6 @@ package Interfaces;
 import Clases.cLibro;
 import Controladora.HashTable;
 import Controladora.controlLibros;
-import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -257,24 +256,24 @@ public class FormHashTable extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIsertarActionPerformed
-         int ISBN = Integer.parseInt(txtIsbn1.getText());
+          int ISBN = Integer.parseInt(txtIsbn1.getText());
 
-        // Verificar que oControlLib no sea null
-        if (oControlLib != null) {
-            oLibro = oControlLib.BuscarUno(ISBN);
+    // Verificar que oControlLib no sea null
+    if (oControlLib != null) {
+        oLibro = oControlLib.BuscarUno(ISBN);
 
-            // Verificar que ambos campos estén completos
-            if (ISBN != 0) {
-                // Insertar en la Hashtable
-                hashTable.insertarLibro(ISBN, oLibro);
+        // Verificar que ambos campos estén completos
+        if (ISBN != 0) {
+            // Insertar en la Hashtable
+            hashTable.insertarLibro(ISBN, oLibro);
 
-                // Actualizar la tabla con los datos de la Hashtable
-                actualizarTabla();
-            }
-        } else {
+            // Actualizar la tabla con los datos de la Hashtable
+            actualizarTabla();
+        }
+    } else {
         // Manejar el caso cuando oControlLib es null
         System.out.println("oControlLib es null");
-        }
+    }
     }//GEN-LAST:event_btnIsertarActionPerformed
 
     private void btnRecuperarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecuperarActionPerformed
@@ -318,30 +317,32 @@ public class FormHashTable extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRecuperarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        // Obtener todos los libros de la Hashtable
-    HashMap<Integer, cLibro> todosLosLibros = hashTable.obtenerTodos();
+       // Obtener todos los libros de la Hashtable
+    cLibro[] todosLosLibros = hashTable.obtenerTodos();
 
     // Limpiar la tabla
     DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
     model.setRowCount(0);
 
     // Llenar la tabla con los datos de la Hashtable
-    int indice = 0;
-    for (cLibro libro : todosLosLibros.values()) {
+    int indiceNumerado = 0;
+    for (cLibro libro : todosLosLibros) {
         // Crear un array con los datos del libro
-        Object[] rowData = {
-            indice++, // Utilizar la secuencia numerada y luego incrementar el índice
-            libro.getISBN(),
-            libro.getTitulo(),
-            libro.getAutor(),
-            libro.getGenero(),
-            libro.getEditorial(),
-            libro.getIdioma(),
-            libro.getAñoPub()
-        };
+        if (libro != null) {
+            Object[] rowData = {
+                indiceNumerado++, // Utilizar la secuencia numerada y luego incrementar el índice
+                libro.getISBN(),
+                libro.getTitulo(),
+                libro.getAutor(),
+                libro.getGenero(),
+                libro.getEditorial(),
+                libro.getIdioma(),
+                libro.getAñoPub()
+            };
 
-        // Añadir la fila al modelo de la tabla
-        model.addRow(rowData);
+            // Añadir la fila al modelo de la tabla
+            model.addRow(rowData);
+        }
     }
     }//GEN-LAST:event_btnListarActionPerformed
 
@@ -364,10 +365,10 @@ public class FormHashTable extends javax.swing.JFrame {
         hashTable = new HashTable(tamaño);
         
 
-//        // Agregar los índices a la tabla
-//        for (int i = 0; i < tamaño; i++) {
-//            modelo1.addRow(new Object[]{i, "", "", "", "", "", "", ""});
-//        }
+        // Agregar los índices a la tabla
+        for (int i = 0; i < tamaño; i++) {
+            modelo1.addRow(new Object[]{i, "", "", "", "", "", "", ""});
+        }
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void txtTamanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTamanoActionPerformed
@@ -380,33 +381,33 @@ public class FormHashTable extends javax.swing.JFrame {
     
     private void actualizarTabla() {
     // Obtener todos los libros de la Hashtable
-    HashMap<Integer, cLibro> todosLosLibros = hashTable.obtenerTodos();
+    cLibro[] todosLosLibros = hashTable.obtenerTodos();
 
     // Limpiar la tabla
-    DefaultTableModel modelo = (DefaultTableModel) TablaLibros.getModel();
-    modelo.setRowCount(0);
+    DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
+    model.setRowCount(0);
 
     // Inicializar un índice para la secuencia numerada
     int indiceNumerado = 0;
 
     // Llenar la tabla con los datos de la Hashtable
-    for (int indice : todosLosLibros.keySet()) {
-        cLibro libro = todosLosLibros.get(indice);
-
+    for (cLibro libro : todosLosLibros) {
         // Crear un array con los datos del libro
-        Object[] rowData = {
-            indiceNumerado++, // Utilizar la secuencia numerada y luego incrementar el índice
-            libro.getISBN(),
-            libro.getTitulo(),
-            libro.getAutor(),
-            libro.getGenero(),
-            libro.getEditorial(),
-            libro.getIdioma(),
-            libro.getAñoPub()
-        };
+        if (libro != null) {
+            Object[] rowData = {
+                indiceNumerado++, // Utilizar la secuencia numerada y luego incrementar el índice
+                libro.getISBN(),
+                libro.getTitulo(),
+                libro.getAutor(),
+                libro.getGenero(),
+                libro.getEditorial(),
+                libro.getIdioma(),
+                libro.getAñoPub()
+            };
 
-        // Añadir la fila al modelo de la tabla
-        modelo.addRow(rowData);
+            // Añadir la fila al modelo de la tabla
+            model.addRow(rowData);
+        }
     }
 }
     
