@@ -4,6 +4,7 @@ package Interfaces;
 import Clases.cLibro;
 import Controladora.HashTable;
 import Controladora.controlLibros;
+import java.util.Hashtable;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -317,8 +318,8 @@ public class FormHashTable extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRecuperarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-       // Obtener todos los libros de la Hashtable
-    cLibro[] todosLosLibros = hashTable.obtenerTodos();
+        // Obtener todos los libros de la Hashtable
+    Hashtable<Integer, cLibro> todosLosLibros = hashTable.obtenerTodos();
 
     // Limpiar la tabla
     DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
@@ -326,7 +327,7 @@ public class FormHashTable extends javax.swing.JFrame {
 
     // Llenar la tabla con los datos de la Hashtable
     int indiceNumerado = 0;
-    for (cLibro libro : todosLosLibros) {
+    for (cLibro libro : todosLosLibros.values()) {
         // Crear un array con los datos del libro
         if (libro != null) {
             Object[] rowData = {
@@ -358,17 +359,21 @@ public class FormHashTable extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
-        model.setRowCount(0);
-        
+          DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
+    model.setRowCount(0);
+
+    try {
         int tamaño = Integer.parseInt(txtTamano.getText());
         hashTable = new HashTable(tamaño);
-        
 
         // Agregar los índices a la tabla
         for (int i = 0; i < tamaño; i++) {
-            modelo1.addRow(new Object[]{i, "", "", "", "", "", "", ""});
+            model.addRow(new Object[]{i, "", "", "", "", "", "", ""});
         }
+    } catch (NumberFormatException e) {
+        // Manejar la excepción si no se puede convertir a entero
+        JOptionPane.showMessageDialog(this, "Ingrese un valor válido para el tamaño", "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void txtTamanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTamanoActionPerformed
@@ -381,7 +386,7 @@ public class FormHashTable extends javax.swing.JFrame {
     
     private void actualizarTabla() {
     // Obtener todos los libros de la Hashtable
-    cLibro[] todosLosLibros = hashTable.obtenerTodos();
+    Hashtable<Integer, cLibro> todosLosLibros = hashTable.obtenerTodos();
 
     // Limpiar la tabla
     DefaultTableModel model = (DefaultTableModel) TablaLibros.getModel();
@@ -391,7 +396,7 @@ public class FormHashTable extends javax.swing.JFrame {
     int indiceNumerado = 0;
 
     // Llenar la tabla con los datos de la Hashtable
-    for (cLibro libro : todosLosLibros) {
+    for (cLibro libro : todosLosLibros.values()) {
         // Crear un array con los datos del libro
         if (libro != null) {
             Object[] rowData = {
