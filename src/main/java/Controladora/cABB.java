@@ -65,8 +65,7 @@ public class cABB {
     }
     
     public String ingresaValorBusq(int ISBN, DefaultTableModel modelo) {
-        int n = 0; // Inicializamos el nivel
-        cLibro libro = busquedaDirecta(raiz, ISBN, n);
+        cLibro libro = busquedaDirecta(raiz, ISBN);
 
         if (libro != null) {
             mostrarResultadoTabla(libro,modelo);
@@ -77,17 +76,15 @@ public class cABB {
     }
     
 
-    public cLibro busquedaDirecta(cLibro p,int ISBN, int n){
+    public cLibro busquedaDirecta(cLibro p,int ISBN){
         cLibro libro ;
         if(p != null){
             if(ISBN < p.getISBN()){
-                libro = busquedaDirecta(p.getIzq(), ISBN,n+1);
+                libro = busquedaDirecta(p.getIzq(), ISBN);
             }else{
                 if(ISBN > p.getISBN()){
-                 libro = busquedaDirecta(p.getDer(),ISBN,n+1);
+                 libro = busquedaDirecta(p.getDer(),ISBN);
                 }else{
-                    System.out.println("Encontrado en el nivel "+n);
-//                    System.out.println(p.getTitulo());
                     libro = p;
                 }
             }
