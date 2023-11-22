@@ -140,7 +140,7 @@ public class cRecursividad {
         // Muestra los resultados en la tabla
         for (cLibro libro : resultados) {
             if (libro != null) {
-                Object[] data = {
+               Object[] data = {
                     libro.getISBN(),
                     libro.getGenero(),
                     libro.getIdioma(),
@@ -203,9 +203,6 @@ public class cRecursividad {
         }
     }
     
-    public int suma3(DefaultTableModel modelo, int isbn) {
-        cLibro libroEncontrado = BuscarRecursivamente(modelo, isbn, 0);
-        return libroEncontrado.getISBN()+libroEncontrado.getAñoPub();
-    }
+  
 
 }

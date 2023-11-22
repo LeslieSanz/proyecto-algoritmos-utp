@@ -67,7 +67,6 @@ public class FormRecursividad extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtSuma = new javax.swing.JTextArea();
-        jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -164,13 +163,6 @@ public class FormRecursividad extends javax.swing.JFrame {
         txtSuma.setRows(5);
         jScrollPane1.setViewportView(txtSuma);
 
-        jToggleButton3.setText("SUMA DE VALORES INT DEL ISBN BUSCADO");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-
         jToggleButton4.setText("MOSTRAR 3 ATRIBUTOS");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,9 +181,7 @@ public class FormRecursividad extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnSuma)
                         .addGap(57, 57, 57)
-                        .addComponent(jToggleButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton3))
+                        .addComponent(jToggleButton1))
                     .addComponent(jScrollPane2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -252,8 +242,7 @@ public class FormRecursividad extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSuma)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton3))
+                    .addComponent(jToggleButton1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(41, Short.MAX_VALUE))
@@ -327,13 +316,6 @@ public class FormRecursividad extends javax.swing.JFrame {
         txtSuma.append("Suma de ISBN = "+suma);     // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-     txtSuma.setText("");
-     int isbnF= Integer.parseInt(isbn.getText());
-     int a =cR.suma3(modelo, isbnF);
-    txtSuma.append("Suma de ISBN + Suma de Años = "+a);  // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
        
         cR.mostrarTablaR2(modelo);
@@ -390,7 +372,6 @@ public class FormRecursividad extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JTable tblDatos;
     private javax.swing.JTextArea txtSuma;
