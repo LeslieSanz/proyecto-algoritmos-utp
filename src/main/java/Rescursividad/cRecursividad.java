@@ -74,6 +74,7 @@ public class cRecursividad {
     public void mostrarTablaR(DefaultTableModel modelo) {
     modelo.setRowCount(0);
     modelo.setColumnIdentifiers(new Object[]{"ISBN", "Titulo", "Autor", "Genero", "Editorial", "Idioma", "Año de Publicacion"});
+    //Esto es 
     mostrarTablaRecursivo(modelo, 0);
     }
     
@@ -139,7 +140,7 @@ public class cRecursividad {
         // Muestra los resultados en la tabla
         for (cLibro libro : resultados) {
             if (libro != null) {
-                Object[] data = {
+               Object[] data = {
                     libro.getISBN(),
                     libro.getGenero(),
                     libro.getIdioma(),
@@ -202,9 +203,6 @@ public class cRecursividad {
         }
     }
     
-    public int suma3(DefaultTableModel modelo, int isbn) {
-        cLibro libroEncontrado = BuscarRecursivamente(modelo, isbn, 0);
-        return libroEncontrado.getISBN()+libroEncontrado.getAñoPub();
-    }
+  
 
 }
