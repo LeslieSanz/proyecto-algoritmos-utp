@@ -14,7 +14,7 @@ public class HashTable {
         this.contadorElementos = 0;
         hashtable = new Hashtable<>();
     }
-
+//hola
     public void insertarLibro(int ISBN, cLibro libro) {
         if (contadorElementos < tamaño) {
             hashtable.put(ISBN, libro);
