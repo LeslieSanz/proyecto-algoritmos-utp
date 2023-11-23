@@ -32,6 +32,7 @@ public class Form extends javax.swing.JFrame {
     FormCyP cyp;
     FormHash fh;
     FormHashTable fht;
+    FormABB fABB;
     
     private void establecerColumnas(){
         modelo.addColumn("ISBN");
@@ -110,6 +111,7 @@ public class Form extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         btnHash = new javax.swing.JButton();
         btnHashTable = new javax.swing.JButton();
+        btbABB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -388,6 +390,15 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        btbABB.setBackground(new java.awt.Color(204, 204, 255));
+        btbABB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btbABB.setText("Árbol de Búsqueda Binario");
+        btbABB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbABBActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -487,7 +498,11 @@ public class Form extends javax.swing.JFrame {
                                 .addGap(31, 31, 31)
                                 .addComponent(pnlPrioridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnColaPrioridad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnColaPrioridad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btbABB)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -568,7 +583,10 @@ public class Form extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pnlPrioridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnModificar)
-                            .addComponent(btnColaPrioridad))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnColaPrioridad)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btbABB)))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
@@ -619,6 +637,7 @@ public class Form extends javax.swing.JFrame {
     cp = new FormColaPrioridad(oControlLib);
     fh = new FormHash(oControlLib);
     fht = new FormHashTable(oControlLib);
+    fABB = new FormABB(oControlLib);
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
@@ -756,6 +775,7 @@ public class Form extends javax.swing.JFrame {
         cp.txtLibro.setText(tblDatos.getValueAt(row, 0).toString());
         fh.txtISBN.setText(tblDatos.getValueAt(row, 0).toString());
         fht.txtIsbn1.setText(tblDatos.getValueAt(row, 0).toString());
+        fABB.txtISBN.setText(tblDatos.getValueAt(row, 0).toString());
     }//GEN-LAST:event_tblDatosMouseClicked
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
@@ -818,6 +838,10 @@ public class Form extends javax.swing.JFrame {
     private void btnHashTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHashTableActionPerformed
        fht.setVisible(true);
     }//GEN-LAST:event_btnHashTableActionPerformed
+
+    private void btbABBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbABBActionPerformed
+        fABB.setVisible(true);
+    }//GEN-LAST:event_btbABBActionPerformed
     
     
     /**
@@ -860,6 +884,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton BtnMostrarPor;
     private javax.swing.JTextField autor;
     private javax.swing.JTextField año;
+    private javax.swing.JButton btbABB;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscar2;
     private javax.swing.JButton btnBuscarXpalabras;

@@ -13,7 +13,7 @@ public class controlLibros {
     }
     
     public void cargarDatos(){
-        oLibros[0] = new cLibro("Cien años de soledad", 74728, "Gabriel García Márquez", "Vintage Español", "Novela", 1967, "Español");
+        oLibros[0] = new cLibro("El misterioso caso del 'Objeto Perdido'", 11111, "Sherlock Holmes", "Editorial Detectives", "Misterio", 1890, "Inglés");
         oLibros[1] = new cLibro("El Gran Gatsby", 73565, "F. Scott Fitzgerald", "Scribner", "Novela", 1925, "Inglés");
         oLibros[2] = new cLibro("1984", 24935, "George Orwell", "Signet Classic", "Ciencia ficción", 1949, "Inglés");
         oLibros[3] = new cLibro("El código Da Vinci", 74278, "Dan Brown", "Vintage Español", "Novela", 2003, "Español");
@@ -37,7 +37,7 @@ public class controlLibros {
         oLibros[21] = new cLibro("Mujer en punto de exasperación", 67890, "Autor Anónimo", "Editorial XYZ", "Novela", 2022, "Español");
         oLibros[22] = new cLibro("¡Aventuras en la selva!", 54321, "Autor Aventurero", "Editorial Aventuras", "Aventura", 2020, "Español");
         oLibros[23] = new cLibro("Historias de amor y odio: ¿Quién ganará?", 98765, "Escritor Desconocido", "Editorial XYZ", "Drama", 2010, "Español");
-        oLibros[24] = new cLibro("El misterioso caso del 'Objeto Perdido'", 11111, "Sherlock Holmes", "Editorial Detectives", "Misterio", 1890, "Inglés");
+        oLibros[24] = new cLibro("Cien años de soledad", 74728, "Gabriel García Márquez", "Vintage Español", "Novela", 1967, "Español");
 
     }
     

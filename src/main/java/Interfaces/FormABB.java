@@ -3,6 +3,7 @@ package Interfaces;
 
 import Clases.cLibro;
 import Controladora.cABB;
+import Controladora.controlLibros;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -11,9 +12,13 @@ public class FormABB extends javax.swing.JFrame {
 
     cABB oABB;
     cLibro oLibro;
+    //Para acceder a la instancia oControlLib (arreglo) y mover sus objetos al ABB
+    private static controlLibros oControlLib;
     
-    public FormABB() {
+    public FormABB(controlLibros oControlLib) {
+        this.oControlLib = oControlLib;
         initComponents();
+        setAlwaysOnTop(true);
         establecerColumnas();
         setLocationRelativeTo(null);
     }
@@ -38,21 +43,23 @@ public class FormABB extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         pnlOperaciones = new javax.swing.JPanel();
         btnRecorrer = new javax.swing.JButton();
-        btnCargar = new javax.swing.JButton();
         cbxTipoRecorrido = new javax.swing.JComboBox<>();
         btnBuscar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         txtValorBusq = new javax.swing.JTextField();
         txtValorElim = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        btnIngresar = new javax.swing.JButton();
+        txtISBN = new javax.swing.JTextField();
         pnlResultados = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtSalida = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnCargar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -69,16 +76,6 @@ public class FormABB extends javax.swing.JFrame {
         btnRecorrer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRecorrerActionPerformed(evt);
-            }
-        });
-
-        btnCargar.setBackground(new java.awt.Color(0, 0, 0));
-        btnCargar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnCargar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCargar.setText("Cargar datos");
-        btnCargar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargarActionPerformed(evt);
             }
         });
 
@@ -109,30 +106,36 @@ public class FormABB extends javax.swing.JFrame {
 
         txtValorElim.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 0, 51));
-        jLabel2.setText("*presionar al inicio*");
+        btnIngresar.setBackground(new java.awt.Color(0, 0, 0));
+        btnIngresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnIngresar.setText("Ingresar");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
+
+        txtISBN.setEditable(false);
 
         javax.swing.GroupLayout pnlOperacionesLayout = new javax.swing.GroupLayout(pnlOperaciones);
         pnlOperaciones.setLayout(pnlOperacionesLayout);
         pnlOperacionesLayout.setHorizontalGroup(
             pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOperacionesLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlOperacionesLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel2)))
-                .addGap(29, 29, 29)
+                .addContainerGap(64, Short.MAX_VALUE)
                 .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cbxTipoRecorrido, 0, 112, Short.MAX_VALUE)
-                    .addComponent(btnRecorrer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(37, 37, 37)
+                    .addComponent(txtISBN)
+                    .addComponent(btnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
                 .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtValorBusq))
-                .addGap(29, 29, 29)
+                    .addComponent(btnRecorrer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxTipoRecorrido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtValorBusq, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtValorElim, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -142,19 +145,21 @@ public class FormABB extends javax.swing.JFrame {
             pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOperacionesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCargar, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(btnRecorrer, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnBuscar)
-                        .addComponent(btnEliminar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cbxTipoRecorrido, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtValorBusq)
-                    .addComponent(txtValorElim))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRecorrer, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlOperacionesLayout.createSequentialGroup()
+                        .addComponent(txtISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1))
+                    .addGroup(pnlOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                        .addComponent(txtValorElim)
+                        .addComponent(txtValorBusq)
+                        .addComponent(cbxTipoRecorrido)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pnlResultados.setBackground(new java.awt.Color(255, 255, 204));
@@ -208,6 +213,20 @@ public class FormABB extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
         );
 
+        btnCargar.setBackground(new java.awt.Color(0, 0, 0));
+        btnCargar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCargar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCargar.setText("Cargar datos");
+        btnCargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel2.setText("*presionar al inicio*");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -215,7 +234,12 @@ public class FormABB extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(22, 22, 22)
+                        .addComponent(btnCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -227,8 +251,11 @@ public class FormABB extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnCargar, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -236,7 +263,7 @@ public class FormABB extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(pnlOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(pnlResultados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -290,11 +317,29 @@ public class FormABB extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int valor = Integer.parseInt(txtValorElim.getText());
-        oABB.eliminaNodo(valor);
-        limpiarTabla(modelo);
-        oABB.mostrarTabla(modelo, 2);
+        boolean resultado = oABB.eliminaNodo(valor);
+        if(resultado == true){
+            limpiarTabla(modelo);
+            oABB.mostrarTabla(modelo, 2);
+            txtSalida.setText(null);
+            txtSalida.setText("RESULTADOS DE LA ELIMINACIÓN: \n Libro eliminado exitosamente");
+        }else{
+            txtSalida.setText(null);
+            txtSalida.append("RESULTADOS DE LA ELIMINACIÓN: \n No se eliminó el libro porque no existe");
+        }
+        
         txtValorElim.setText(null);
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        int ISBN = Integer.parseInt(txtISBN.getText());
+        cLibro oLibro = oControlLib.BuscarUno(ISBN);
+        oABB.ingresaLibro(oLibro);
+        txtISBN.setText(null);
+        //Actualizar la tabla con el nuevo valor ingresado (recorre en In Orden por defecto)
+        limpiarTabla(modelo);
+        oABB.mostrarTabla(modelo, 2);
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     public void limpiarTabla(DefaultTableModel modelo) {
         int indMaxFilas = modelo.getRowCount()-1;
@@ -330,7 +375,7 @@ public class FormABB extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormABB().setVisible(true);
+                new FormABB(oControlLib).setVisible(true);
             }
         });
     }
@@ -339,6 +384,7 @@ public class FormABB extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCargar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnRecorrer;
     private javax.swing.JComboBox<String> cbxTipoRecorrido;
     private javax.swing.JLabel jLabel1;
@@ -350,6 +396,7 @@ public class FormABB extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel pnlOperaciones;
     private javax.swing.JPanel pnlResultados;
+    public javax.swing.JTextField txtISBN;
     private javax.swing.JTextArea txtSalida;
     private javax.swing.JTextField txtValorBusq;
     private javax.swing.JTextField txtValorElim;
