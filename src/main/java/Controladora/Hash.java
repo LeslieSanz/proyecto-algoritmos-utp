@@ -23,22 +23,27 @@ public class Hash {
     }
     
     public void plegamiento(cLibro libro,  JTable tabla){
-        int valor = libro.getISBN(); // Supongamos que el ISBN es el valor para la función hash
+        int valor = libro.getISBN(); 
         int indice,n1,n2;
         n1=valor/1000;
         n2 = valor%1000;  
         indice = (n1+n2) % m;
         if(arreglo[indice] != null && arreglo[indice].getISBN() != valor){
-            indice=colisionVisitaLineal(indice);}
+            indice=colisionVisitaLineal(indice);
+        }
         arreglo[indice] = libro;
         actualizarTabla(tabla);
     }
     
     public int colisionVisitaLineal(int indice){
-        int j=0;
+        int j=0, contador=0;
         
         while(arreglo[(indice+j)%m]!=null){
             j++;
+            contador++;
+            if(contador>m){
+                return -1;
+            }
         }
         return (indice+j)% m;
     }
