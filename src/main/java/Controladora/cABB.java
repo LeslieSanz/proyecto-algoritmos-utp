@@ -15,16 +15,18 @@ public class cABB {
     }
     
     public void cargarDatos(){
-        ingresaLibro(new cLibro("Cien años de soledad", 10, "Gabriel García Márquez", "Vintage Español", "Novela", 1967, "Español"));
-        ingresaLibro(new cLibro("El Gran Gatsby", 15, "F. Scott Fitzgerald", "Scribner", "Novela", 1925, "Inglés"));
-        ingresaLibro(new cLibro("1984", 8, "George Orwell", "Signet Classic", "Ciencia ficción", 1949, "Inglés"));
-        ingresaLibro(new cLibro("El código Da Vinci", 12, "Dan Brown", "Vintage Español", "Novela", 2003, "Español"));
-        ingresaLibro(new cLibro("Harry Potter y la piedra filosofal", 20, "J.K. Rowling", "Salamandra", "Fantasía", 1997, "Español"));
-        ingresaLibro(new cLibro("Matar un ruiseñor", 3, "Harper Lee", "Harper Perennial Modern Classics", "Novela", 1960, "Inglés"));
-        ingresaLibro(new cLibro("El Hobbit", 9, "J.R.R. Tolkien", "Houghton Mifflin Harcourt", "Fantasía", 1937, "Inglés"));
-        ingresaLibro(new cLibro("La ladrona de libros", 4, "Markus Zusak", "Vintage Books", "Drama", 2005, "Inglés"));
-        ingresaLibro(new cLibro("El exorcista", 14, "William Peter Blatty", "Penguin Classics", "Terror", 1971, "Inglés"));
-        ingresaLibro(new cLibro("La naranja mecánica", 13, "Anthony Burgess", "W. W. Norton & Company", "Ciencia ficción", 1962, "Inglés")); 
+        ingresaLibro(new cLibro("Crimen y castigo", 80599, "Fyodor Dostoevsky", "Oxford University Press", "Novela", 1866, "Inglés"));
+        ingresaLibro(new cLibro("El principito", 13925, "Antoine de Saint-Exupéry", "Harvest Books", "Infantil", 1943, "Inglés"));
+        ingresaLibro(new cLibro("Los pilares de la Tierra", 25245, "Ken Follett", "Signet", "Histórico", 1989, "Inglés"));
+        ingresaLibro(new cLibro("La naranja mecánica", 12836, "Anthony Burgess", "W. W. Norton & Company", "Ciencia ficción", 1962, "Inglés"));
+        ingresaLibro(new cLibro("Orgullo y prejuicio", 90561, "Jane Austen", "CreateSpace Independent Publishing Platform", "Romance", 1813, "Inglés"));
+        ingresaLibro(new cLibro("Los juegos del hambre", 84369, "Suzanne Collins", "Molino", "Ciencia ficción", 2008, "Español"));
+//        ingresaLibro(new cLibro("La ladrona de libros", 75732, "Markus Zusak", "Vintage Books", "Drama", 2005, "Inglés"));
+//        ingresaLibro(new cLibro("El exorcista", 42341, "William Peter Blatty", "Penguin Classics", "Terror", 1971, "Inglés"));
+//        ingresaLibro(new cLibro("Don Quijote de la Mancha", 12345, "Miguel de Cervantes Saavedra", "Editorial", "Novela", 1605, "Español"));
+//        ingresaLibro(new cLibro("Mujer en punto de exasperación", 67890, "Autor Anónimo", "Editorial XYZ", "Novela", 2022, "Español"));
+//        ingresaLibro(new cLibro("¡Aventuras en la selva!", 54321, "Autor Aventurero", "Editorial Aventuras", "Aventura", 2020, "Español"));
+//        ingresaLibro(new cLibro("Cien años de soledad", 74728, "Gabriel García Márquez", "Vintage Español", "Novela", 1967, "Español"));
     }
 
     
@@ -94,6 +96,7 @@ public class cABB {
         return libro;
     }
     
+    //Para mostrar resultado de la busqueda de un libro
     public void mostrarResultadoTabla(cLibro libro,DefaultTableModel modelo) {
         Object[] rowData = {
                 libro.getISBN(),
@@ -107,7 +110,7 @@ public class cABB {
             modelo.addRow(rowData);
     }
     
-    //Metodo para ponerlo en una tabla, y mostrar en inOrden
+    
     public void mostrarTabla(DefaultTableModel modelo, int tipo) {
         p=raiz;
         switch(tipo){
@@ -180,7 +183,7 @@ public class cABB {
     }
     
     
-    
+    //Metodo que muestra pero devuelve en cadena, no en tabla. Fue de prueba, no se usó en el form
     public String muestraValores(int tipo){
         p=raiz; String cadena="";
         switch(tipo){
@@ -224,7 +227,7 @@ public class cABB {
         return cadena;
     }
     
-      public boolean eliminaNodo(int dato){
+    public boolean eliminaNodo(int dato){
         cLibro padre=raiz; p=raiz; boolean esHijoIzq=true;
         while(p.getISBN()!= dato){
             padre=p;
@@ -236,66 +239,58 @@ public class cABB {
                 p=p.getDer();
             }
             if(p == null){
-                System.out.println("No se encontro el nodo");
                 return false;
             }    
         }
-        if(p.getIzq() == null && p.getDer() == null){ //Cuando es hoja, no tiene hijos
+        // Caso 1: El nodo a eliminar es una hoja (no tiene hijos)
+        if(p.getIzq() == null && p.getDer() == null){ 
             if(raiz == p){ 
                 setRaiz(null);
-                System.out.println("Este es el caso en que era una hoja y era era la raiz");
             }else{
                 if(esHijoIzq == true){
                     padre.setIzq(null);
-                    System.out.println("Este es el caso en que era una hoja y era hijo Izquierdo");
                 }else{
                     padre.setDer(null);
-                    System.out.println("Este es el caso en que era una hoja y era hijo Derecho");
                 }     
             }
-        }else{ //Si tiene un solo hijo
-            if(p.getDer()==null){ //Cuando tiene hijo izquierdo
+        }else{ 
+            // Caso 2: El nodo a eliminar tiene un solo hijo
+            if(p.getDer()==null){ // Caso 2.1: Tiene solo un hijo izquierdo
                 if(p == raiz){
                     setRaiz(p.getIzq());
-                    System.out.println("Este es el caso en que era la RAIZ con un solo hijo IZQ");
                 }else{
                     if(esHijoIzq == true){
                         padre.setIzq(p.getIzq());
-                        System.out.println("Este es el caso en que el nodo a eliminar es hijo IZQUIERDO y tiene UN HIJO IZQ");
                     }else{
                         padre.setDer(p.getIzq());
-                        System.out.println("Este es el caso en que el nodo a eliminar es hijo DERECHO y tiene UN HIJO IZQ");
                     }
                 }
-            } else if(p.getIzq()==null){ //Cuando tiene hijo derecho
+            } else if(p.getIzq()==null){ // Caso 2.2: Tiene solo un hijo derecho
                 if(p == raiz){
                     setRaiz(p.getDer());
-                    System.out.println("Este es el caso en que era la RAIZ con un solo hijo DER");
                 }else{
                     if(esHijoIzq == true){
                         padre.setIzq(p.getDer());
-                        System.out.println("Este es el caso en que el nodo a eliminar es hijo IZQUIERDO y tiene UN HIJO DER");
                     }else{
                         padre.setDer(p.getDer());
-                        System.out.println("Este es el caso en que el nodo a eliminar es hijo DERECHO y tiene UN HIJO DER");
                     }
                 }
             } else{
+                // Caso 3: El nodo a eliminar tiene dos hijos
                 cLibro q = buscaReemplazo(p);
                 if(p == raiz){
                     setRaiz(q);
                 }else{
-                    //Si el nodo no es la raiz y esta a la izquierda
+                    //Si el nodo NO es la raiz y esta a la izquierda
                     if(esHijoIzq == true){
                         padre.setIzq(q);
                     }else{
-                        //Si el nodo no es la raiz y esta a la derecha
+                        //Si el nodo NO es la raiz y esta a la derecha
                         padre.setDer(q);
                     }
                 }
             }
         }
-        System.out.println("Nodo eliminado exitosamente");
         return true;
     }
     
@@ -316,140 +311,6 @@ public class cABB {
         q.setDer(p.getDer()); //Conectar al reemplazo con la derecha del nodo a eliminar
         return q;
     }
-    
-//    public boolean eliminaNodo(int dato){
-//        cLibro padre=raiz; p=raiz; boolean esHijoIzq=true;
-//        while(p.getISBN()!= dato){
-//            padre=p;
-//            if(dato<p.getISBN()){
-//                esHijoIzq = true;
-//                p=p.getIzq();
-//            }else{
-//                esHijoIzq = false;
-//                p=p.getDer();
-//            }
-//            if(p == null)
-//                return false;
-//        }
-//        if(p.getIzq() == null && p.getDer() == null){ //Cuando es hoja, no tiene hijos
-//            if(raiz == p){ 
-//                setRaiz(null);
-//                System.out.println("Este es el caso en que era una hoja y era era la raiz");
-//            }else{
-//                if(esHijoIzq == true){
-//                    padre.setIzq(null);
-//                    System.out.println("Este es el caso en que era una hoja y era hijo Izquierdo");
-//                }else{
-//                    padre.setDer(null);
-//                    System.out.println("Este es el caso en que era una hoja y era hijo Derecho");
-//                }     
-//            }
-//        }else{ //Si tiene un solo hijo
-//            if(p.getDer()==null){ //Cuando tiene hijo izquierdo
-//                if(p == raiz){
-//                    setRaiz(p.getIzq());
-//                    System.out.println("Este es el caso en que era la RAIZ con un solo hijo IZQ");
-//                }else{
-//                    if(esHijoIzq == true){
-//                        padre.setIzq(p.getIzq());
-//                        System.out.println("Este es el caso en que el nodo a eliminar es hijo IZQUIERDO y tiene UN HIJO IZQ");
-//                    }else{
-//                        padre.setDer(p.getIzq());
-//                        System.out.println("Este es el caso en que el nodo a eliminar es hijo DERECHO y tiene UN HIJO IZQ");
-//                    }
-//                }
-//            }
-//            if(p.getIzq()==null){ //Cuando tiene hijo derecho
-//                if(p == raiz){
-//                    setRaiz(p.getDer());
-//                    System.out.println("Este es el caso en que era la RAIZ con un solo hijo DER");
-//                }else{
-//                    if(esHijoIzq == true){
-//                        padre.setIzq(p.getDer());
-//                        System.out.println("Este es el caso en que el nodo a eliminar es hijo IZQUIERDO y tiene UN HIJO DER");
-//                    }else{
-//                        padre.setDer(p.getDer());
-//                        System.out.println("Este es el caso en que el nodo a eliminar es hijo DERECHO y tiene UN HIJO DER");
-//                    }
-//                }
-//            }
-//            if(p.getIzq() != null && p.getDer() != null){ //Cuando tiene DOS hijos
-//                cLibro q=p.getIzq(),r=p; //Para rastrear la nodo padre del reemplazo
-//
-//                //Buscar el nodo mas a la DERECHA del sub-arbol IZQUIERDO (el inorden y pre orden empiezan asi)
-//                 while (q.getDer()!= null) {
-//                    r=q; //r es el padre del reemplazo
-//                    q = q.getDer(); //q es el reemplazo -.-
-//                }
-//                 
-//                if(p == raiz){ //Si el nodo a eliminar es raiz
-//                    
-//                    if(q.getIzq() == null){ //Si el reemplazo no tiene hijo izquierdo (derecho no tiene)
-//                        r.setDer(null);
-//                        q.setIzq(p.getIzq());
-//                        q.setDer(p.getDer());
-//                        setRaiz(q);
-//                        System.out.println("Este es el caso en que el nodo a eliminar es LA RAIZ que tiene dos HIJOS (y su reemplazo es HOJA)");
-//                    }else{
-//                        r.setDer(q.getIzq());
-//                        q.setIzq(null);
-//                        q.setIzq(p.getIzq());
-//                        q.setDer(p.getDer());
-//                        setRaiz(q);
-//                        System.out.println("Este es el caso en que el nodo a eliminar es LA RAIZ que tiene dos HIJOS (y su reemplazo tiene un hijo IZQ)");
-//                    }
-//                }else{
-//                    if(esHijoIzq == true){
-//                        if(q.getIzq() == null){
-//                            if(p == r){                     
-//                            q.setDer(p.getDer());
-//                            padre.setIzq(q);
-//                            System.out.println("Este es el caso en que el nodo a eliminar ES INTERMEDIO (ES IZQ) que tiene dos HIJOS y su reemplazo ES SU hijo directo");
-//                            }else{
-//                                r.setDer(null);
-//                                q.setDer(p.getDer());
-//                                q.setIzq(p.getIzq());
-//                                padre.setIzq(q);
-//                                System.out.println("Este es el caso en que el nodo a eliminar ES INTERMEDIO (ES IZQ) que tiene dos HIJOS y su reemplazo NO es su hijo directo");
-//                            }
-//                        }else{
-//                            r.setDer(null);
-//                            r.setIzq(q.getIzq());
-//                            q.setDer(p.getDer());
-//                            q.setIzq(p.getIzq());
-//                            padre.setIzq(q);
-//                            System.out.println("Este es el caso en que el nodo a eliminar ES INTERMEDIO (ES IZQ) que tiene dos HIJOS y su reemplazo NO es su hijo directo y este tenia un hijo izquierdo");
-//                            
-//                        }
-//                    }else{
-//                        if(q.getIzq() == null){ //Si el reemplazo es una hoja
-//                            if(p == r){
-//                            q.setDer(p.getDer());
-//                            padre.setDer(q);
-//                            System.out.println("Este es el caso en que el nodo a eliminar es INTERMEDIO (ES DER) y tiene dos HIJOS y su reemplazo ES su hijo directo");  
-//                            }else{
-//                                r.setDer(null);
-//                                q.setDer(p.getDer());
-//                                q.setIzq(p.getIzq());
-//                                padre.setDer(q);
-//                                System.out.println("Este es el caso en que el nodo a eliminar es INTERMEDIO (ES DER) y tiene dos HIJOS y su reemplazo NO ES su hijo directo");
-//                            }
-//                            
-//                        }else{
-//                            r.setDer(null);
-//                            r.setIzq(q.getIzq());
-//                            q.setDer(p.getDer());
-//                            q.setIzq(p.getIzq());
-//                            padre.setDer(q);
-//                            System.out.println("Este es el caso en que el nodo a eliminar es INTERMEDIO (ES DER) y tiene dos HIJOS y su reemplazo NO ES su hijo directo y este tenia un hijo IZQ");
-//                            
-//                        }
-//                    }
-//                } //Falta considerar cuando el reemplazo tiene hijo izquierdo
-//            }
-//        } 
-//        return false;
-//    }
 
     public void setRaiz(cLibro raiz) {
         this.raiz = raiz;
