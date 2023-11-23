@@ -3,7 +3,7 @@ package Interfaces;
 import Clases.cLibro;
 import Controladora.ListaEnlazadaDoble;
 import Controladora.controlLibros;
-import Rescursividad.cRecursividad;
+import Controladora.cRecursividad;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
