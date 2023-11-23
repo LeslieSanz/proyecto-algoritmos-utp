@@ -17,7 +17,6 @@ public class FormHashTable extends javax.swing.JFrame {
     public FormHashTable(controlLibros oControlLib) {
         this.oControlLib = oControlLib;
         initComponents();
-        setAlwaysOnTop(true);
         establecerColumnas1();      
         
     }
