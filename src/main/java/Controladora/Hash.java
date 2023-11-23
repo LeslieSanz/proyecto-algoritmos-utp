@@ -54,18 +54,14 @@ public class Hash {
             return indice; // Si el valor está en el índice calculado, retorna el índice
         } else {
             int j = 0; 
-            if(arreglo[(indice+j)%m]!=null){
-                while(arreglo[(indice + j) % m].getISBN() != valor){
+                while(arreglo[(indice+j)%m]==null || arreglo[(indice + j) % m].getISBN() != valor){
                     j++;
                     contador++;
                        if(contador>m){
                            return -1;
                        }
                 }
-            }else{
-                return -1;
-            }
-            return (indice+j)%m; 
+                return (indice+j)%m; 
         }
     }
     
