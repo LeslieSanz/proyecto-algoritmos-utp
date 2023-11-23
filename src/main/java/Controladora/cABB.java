@@ -19,13 +19,14 @@ public class cABB {
         ingresaLibro(new cLibro("El principito", 13925, "Antoine de Saint-Exupéry", "Harvest Books", "Infantil", 1943, "Inglés"));
         ingresaLibro(new cLibro("Los pilares de la Tierra", 25245, "Ken Follett", "Signet", "Histórico", 1989, "Inglés"));
         ingresaLibro(new cLibro("La naranja mecánica", 12836, "Anthony Burgess", "W. W. Norton & Company", "Ciencia ficción", 1962, "Inglés"));
-        ingresaLibro(new cLibro("La ladrona de libros", 75732, "Markus Zusak", "Vintage Books", "Drama", 2005, "Inglés"));
-        ingresaLibro(new cLibro("El exorcista", 42341, "William Peter Blatty", "Penguin Classics", "Terror", 1971, "Inglés"));
-        ingresaLibro(new cLibro("Don Quijote de la Mancha", 12345, "Miguel de Cervantes Saavedra", "Editorial", "Novela", 1605, "Español"));
-        ingresaLibro(new cLibro("Mujer en punto de exasperación", 67890, "Autor Anónimo", "Editorial XYZ", "Novela", 2022, "Español"));
-        ingresaLibro(new cLibro("¡Aventuras en la selva!", 54321, "Autor Aventurero", "Editorial Aventuras", "Aventura", 2020, "Español"));
-        ingresaLibro(new cLibro("Historias de amor y odio: ¿Quién ganará?", 98765, "Escritor Desconocido", "Editorial XYZ", "Drama", 2010, "Español"));
-        ingresaLibro(new cLibro("Cien años de soledad", 74728, "Gabriel García Márquez", "Vintage Español", "Novela", 1967, "Español"));
+        ingresaLibro(new cLibro("Orgullo y prejuicio", 90561, "Jane Austen", "CreateSpace Independent Publishing Platform", "Romance", 1813, "Inglés"));
+        ingresaLibro(new cLibro("Los juegos del hambre", 84369, "Suzanne Collins", "Molino", "Ciencia ficción", 2008, "Español"));
+//        ingresaLibro(new cLibro("La ladrona de libros", 75732, "Markus Zusak", "Vintage Books", "Drama", 2005, "Inglés"));
+//        ingresaLibro(new cLibro("El exorcista", 42341, "William Peter Blatty", "Penguin Classics", "Terror", 1971, "Inglés"));
+//        ingresaLibro(new cLibro("Don Quijote de la Mancha", 12345, "Miguel de Cervantes Saavedra", "Editorial", "Novela", 1605, "Español"));
+//        ingresaLibro(new cLibro("Mujer en punto de exasperación", 67890, "Autor Anónimo", "Editorial XYZ", "Novela", 2022, "Español"));
+//        ingresaLibro(new cLibro("¡Aventuras en la selva!", 54321, "Autor Aventurero", "Editorial Aventuras", "Aventura", 2020, "Español"));
+//        ingresaLibro(new cLibro("Cien años de soledad", 74728, "Gabriel García Márquez", "Vintage Español", "Novela", 1967, "Español"));
     }
 
     
